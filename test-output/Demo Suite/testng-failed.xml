@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Demo Suite]">
+  <test name="Demo Test 1(failed)">
+    <classes>
+      <class name="com.stepdefinition.TestRunner1">
+        <methods>
+          <include name="runCukes"/>
+          <include name="initializeReports"/>
+          <include name="endReports"/>
+        </methods>
+      </class> <!-- com.stepdefinition.TestRunner1 -->
+    </classes>
+  </test> <!-- Demo Test 1(failed) -->
+</suite> <!-- Failed suite [Demo Suite] -->

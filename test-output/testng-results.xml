@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="46861" started-at="2017-10-03T12:21:35Z" finished-at="2017-10-03T12:22:21Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="46861" started-at="2017-10-03T12:21:35Z" finished-at="2017-10-03T12:22:21Z">
+      <class name="com.stepdefinition.TestRunner1">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:com.stepdefinition.TestRunner1@243c4f91]" name="beforeClass" is-config="true" duration-ms="166" started-at="2017-10-03T17:51:35Z" finished-at="2017-10-03T17:51:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="runCukes()[pri:0, instance:com.stepdefinition.TestRunner1@243c4f91]" name="runCukes" duration-ms="46664" started-at="2017-10-03T17:51:35Z" finished-at="2017-10-03T17:52:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runCukes -->
+        <test-method status="PASS" signature="endReportsAndQuitBrowser()[pri:0, instance:com.stepdefinition.TestRunner1@243c4f91]" name="endReportsAndQuitBrowser" is-config="true" duration-ms="0" started-at="2017-10-03T17:52:21Z" finished-at="2017-10-03T17:52:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endReportsAndQuitBrowser -->
+      </class> <!-- com.stepdefinition.TestRunner1 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

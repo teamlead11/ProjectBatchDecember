@@ -1,0 +1,10 @@
+2017-05-16 18:16:32,583 [Worker-9] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: CI_Automation:CI_Automation:0.0.1-SNAPSHOT @ C:\Users\sg0958302\Git\pms-v4-automation_rabiya\CI_Automation\pom.xml.
+2017-05-16 18:16:34,969 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CI_Automation/src/main/java
+2017-05-16 18:16:34,970 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /CI_Automation/src/main/resources
+2017-05-16 18:16:35,001 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CI_Automation/src/test/java
+2017-05-16 18:16:35,001 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /CI_Automation/src/test/resources
+2017-05-16 18:16:35,234 [Worker-9] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 5 sec
+2017-05-16 18:16:42,990 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-16 18:16:43,035 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 586 resources
+2017-05-16 18:16:45,710 [Worker-4] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-05-16 18:16:45,712 [Worker-4] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 42 resources
