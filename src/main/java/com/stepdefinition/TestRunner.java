@@ -12,8 +12,8 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/com/Login", glue = { "com.stepdefinition" }, plugin = { "pretty",
-		"html:target/cucumber-html-report" })
+@CucumberOptions(features = "src/test/resources/com/Login", glue = { "com.stepdefinition" }, plugin = {
+		"com.resources.ExtentCucumberFormatter:" })
 
 public class TestRunner {
 

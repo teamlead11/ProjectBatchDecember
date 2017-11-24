@@ -1,7 +1,5 @@
 package com.stepdefinition;
 
-import org.openqa.selenium.By;
-
 import com.ObjectRepository.AdactinLoginPage;
 import com.resources.FunctionalLibrary;
 

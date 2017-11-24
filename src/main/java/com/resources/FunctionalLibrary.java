@@ -204,11 +204,9 @@ public class FunctionalLibrary {
 		try {
 			element.clear();
 			element.sendKeys(value);
-			// Reporter.addStepLogPass(value + " entered into textbox
-			// successfully" + element.toString());
+			Reporter.addStepLogPass(value + " entered into textbox successfully" + element.toString());
 		} catch (Exception e) {
-			// Reporter.addStepLogInfo("failed to enter" + value + "into" +
-			// "textbox " + element.toString());
+			Reporter.addStepLogInfo("failed to enter" + value + "into" + "textbox " + element.toString());
 		}
 	}
 
