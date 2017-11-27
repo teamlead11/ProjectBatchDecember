@@ -20,7 +20,6 @@ public class LoginSteps extends FunctionalLibrary {
 		setText(loginpage.getUserNameTextField(), username);
 		setText(loginpage.getPasswordTextField(), password);
 		click(loginpage.getSignInButton());
-
 	}
 
 	@Then("^I verify the \"([^\"]*)\"$")

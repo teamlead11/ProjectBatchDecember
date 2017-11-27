@@ -57,6 +57,7 @@ public class FunctionalLibrary {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		return driver;
+		
 	}
 
 	/**
