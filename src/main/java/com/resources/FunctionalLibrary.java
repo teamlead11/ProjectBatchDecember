@@ -57,7 +57,7 @@ public class FunctionalLibrary {
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		return driver;
-		
+
 	}
 
 	/**
@@ -452,10 +452,6 @@ public class FunctionalLibrary {
 
 	}
 
-	public static void waitForProgressMeterVanish() {
-		WebDriverWait wait = new WebDriverWait(driver, 90);
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("spark-progress__meter")));
-	}
 
 	public static String getRandomString(int length) {
 		char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
