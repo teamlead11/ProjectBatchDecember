@@ -13,8 +13,8 @@ public class BaseClass {
 		FunctionalLibrary.driverInit();
 	}
 
-	@After
+	/*@After
 	public static void afterScenario() {
 		FunctionalLibrary.closeBrowser();
-	}
+	}*/
 }

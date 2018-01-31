@@ -12,8 +12,10 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/com/", tags={"@regression"},glue = { "com.stepdefinition" }, plugin = {
+@CucumberOptions(features = "src/main/java/com/resources/Flight1.feature", glue = { "com.stepdefinition" }, plugin = {
 		"com.resources.ExtentCucumberFormatter:" })
+
+
 
 public class TestRunner {
 
