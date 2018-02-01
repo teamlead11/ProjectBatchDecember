@@ -85,12 +85,11 @@ public class DeltaCom extends FunctionalLibrary {
 	
 	public void dropDown(String Count) {
 		click(getDrpdwnAdult());
-		WebElement list = driver.findElement(By.xpath("//ul[@id='adultCount-menu']"));
-		if (list.isEnabled()) {
-			List<WebElement> listOfElements = list.findElements(By.tagName("li"));
+		WebElement drpDown = driver.findElement(By.xpath("//ul[@id='adultCount-menu']"));
+		if (drpDown.isEnabled()) {
+			List<WebElement> listOfElements = drpDown.findElements(By.tagName("li"));
 			for (WebElement value : listOfElements) {
 				String text = value.getText();
-				System.out.println(text);
 				if (text.equals(Count)) {
 				}
 				WebDriverWait wait = new WebDriverWait(driver, 20);
