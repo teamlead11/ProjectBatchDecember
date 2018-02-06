@@ -3,10 +3,7 @@ package com.objectRepository;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -165,17 +162,7 @@ public class VacationPackages extends FunctionalLibrary {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void sliderActionForMinimumPrice(String minimumPrice) {
-		WebElement slider = getSliderMinPrice();
-		String minimumValue = slider.getText();
-		int value = Integer.valueOf(minimumValue);
-		int price = Integer.valueOf(minimumPrice);
-		WebElement slideBar = driver.findElement(By.id("dlvPriceRange"));
-		if (value > price) {
-			Dimension dimension = slideBar.getSize();
 
-		}
-	}
 
 	public void slideraction() {
 		WebElement s = getSliderMinPrice();
