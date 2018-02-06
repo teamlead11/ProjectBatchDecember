@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -77,6 +78,20 @@ public class VacationPackages extends FunctionalLibrary {
 
 	@FindBy(xpath = "//div[@id='rentalCarSpotlightContainer']//ul")
 	private WebElement carRental;
+
+	@FindBy(xpath = "//span[@title='price range minimum']")
+	private WebElement sliderMinPrice;
+
+	@FindBy(xpath = "//span[@title='price range maximum']")
+	private WebElement sliderMaxPrice;
+
+	public WebElement getSliderMinPrice() {
+		return sliderMinPrice;
+	}
+
+	public WebElement getSliderMaxPrice() {
+		return sliderMaxPrice;
+	}
 
 	public WebElement getCarRental() {
 		return carRental;
@@ -150,13 +165,22 @@ public class VacationPackages extends FunctionalLibrary {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void sliderAction() {
-		WebElement slider = driver
-				.findElement(By.xpath("(//span[@class='ui-slider-handle ui-state-default ui-corner-all'])[2]"));
-		Actions move = new Actions(driver);
-		Dimension d = slider.getSize();
-		int x = d.getWidth();
-		move.clickAndHold(slider).moveByOffset(x - 200, 0).release();
+	public void sliderActionForMinimumPrice(String minimumPrice) {
+		WebElement slider = getSliderMinPrice();
+		String minimumValue = slider.getText();
+		int value = Integer.valueOf(minimumValue);
+		int price = Integer.valueOf(minimumPrice);
+		WebElement slideBar = driver.findElement(By.id("dlvPriceRange"));
+		if (value > price) {
+			Dimension dimension = slideBar.getSize();
+
+		}
+	}
+
+	public void slideraction() {
+		WebElement s = getSliderMinPrice();
+		Actions a = new Actions(driver);
+		a.dragAndDropBy(s, 30, 0).build().perform();
 	}
 
 	public void dropDown(String Count) {

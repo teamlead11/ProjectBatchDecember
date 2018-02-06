@@ -1,6 +1,7 @@
 package com.stepdefinition;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 
 import com.objectRepository.VacationPackages;
 import com.resources.FunctionalLibrary;
@@ -27,6 +28,9 @@ public class VacationPackagesSteps extends FunctionalLibrary {
 		setText(v.getDepartureDate(), "02/01/2018");
 		setText(v.getReturnDate(), "02/15/2018");
 		click(v.getDrpdwnAdult());
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(document.body.scrollHeight,15");
+		Thread.sleep(5000);
+		v.dropDown("5");
 		click(v.getBtnSubmit());
 	}
 
