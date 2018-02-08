@@ -12,10 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.resources.FunctionalLibrary;
 
-/**
- * @author Shylaja
- *
- */
 public class VacationPackages extends FunctionalLibrary {
 
 	@FindBy(id = "book-delta-vacations-content-trigger")
@@ -73,7 +69,7 @@ public class VacationPackages extends FunctionalLibrary {
 	@FindBy(xpath = "driver.findElements(By.xpath(\"//h4[text()='OUR NEW AIRBUS A350']")
 	private WebElement lnkAirBus;
 
-	@FindBy(xpath = "//div[@id='rentalCarSpotlightContainer']//ul")
+	@FindBy(xpath = "//div[@id='rentalCarSpotlightContainer']")
 	private WebElement carRental;
 
 	@FindBy(xpath = "//span[@title='price range minimum']")
@@ -162,8 +158,6 @@ public class VacationPackages extends FunctionalLibrary {
 		PageFactory.initElements(driver, this);
 	}
 
-
-
 	public void slideraction() {
 		WebElement s = getSliderMinPrice();
 		Actions a = new Actions(driver);
@@ -193,7 +187,7 @@ public class VacationPackages extends FunctionalLibrary {
 		WebElement list = driver.findElement(By.id("stateProv-menu"));
 		if (list.isDisplayed()) {
 			List<WebElement> allValues = list.findElements(By.tagName("li"));
-			for (WebElement x : allValues) {
+			for(WebElement x : allValues) {
 				String text = x.getText();
 				if (text.equalsIgnoreCase(name)) {
 					click(x);
@@ -223,10 +217,11 @@ public class VacationPackages extends FunctionalLibrary {
 
 	public void rentingCarBasedOnPrice(String nameOfCars) {
 		WebElement carRental2 = getCarRental();
-		List<WebElement> listOfCars = carRental2.findElements(By.tagName("li"));
+		WebElement modeOfCars = getCarRental().findElement(By.tagName("ul"));
+		List<WebElement> listOfCars = modeOfCars.findElements(By.tagName("li"));
 		for (WebElement x : listOfCars) {
 			String cars = x.getText();
-			if (cars.equalsIgnoreCase(nameOfCars)) {
+			if (cars.contains(nameOfCars)) {
 				click(x);
 
 			}
