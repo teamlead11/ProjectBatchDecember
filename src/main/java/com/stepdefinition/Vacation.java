@@ -27,11 +27,9 @@ public class Vacation extends FunctionalLibrary {
 		selectByValue(v.getTxtToLocation(), "YYC");
 		setText(v.getDepartureDate(), "02/15/2018");
 		setText(v.getReturnDate(), "02/18/2018");
-		click(v.getDrpdwnAdult());
-		Thread.sleep(5000);
-//		v.dropDown("1");
+		v.dropDown("1");
+		Thread.sleep(1500);
 		click(v.getBtnSubmit());
-		Thread.sleep(5000);
 	}
 
 	@When("^I book the hotel with lowest price$")
@@ -43,7 +41,7 @@ public class Vacation extends FunctionalLibrary {
 		click(v.getBtnSelect());
 		click(v.getLoadBtn());
 		Thread.sleep(2500);
-		
+
 	}
 
 	@When("^I book the flight with lowest price$")

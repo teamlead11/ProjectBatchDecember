@@ -7,8 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.resources.FunctionalLibrary;
 
@@ -166,31 +164,28 @@ public class VacationPackages extends FunctionalLibrary {
 
 	public void dropDown(String Count) {
 		click(getDrpdwnAdult());
-		WebElement list = driver.findElement(By.xpath("//ul[@id='adultCount-menu']"));
-		if (list.isEnabled()) {
-			List<WebElement> listOfElements = list.findElements(By.tagName("li"));
-			for (WebElement value : listOfElements) {
-				String text = value.getText();
+		WebElement adultList = driver.findElement(By.xpath("//ul[@id='adultCount-menu']"));
+		if (adultList.isEnabled()) {
+			List<WebElement> listOfAdult = adultList.findElements(By.tagName("li"));
+			for (WebElement noOfAdults : listOfAdult) {
+				String text = noOfAdults.getText();
 				System.out.println(text);
 				if (text.equals(Count)) {
 				}
-				WebDriverWait wait = new WebDriverWait(driver, 20);
-				wait.until(ExpectedConditions.visibilityOf(value));
-				value.click();
+				click(noOfAdults);
 			}
 		}
 	}
 
 	public void sortingTheHotel(String name) {
-		WebElement sorting = getDrpDownSort();
-		click(sorting);
-		WebElement list = driver.findElement(By.id("stateProv-menu"));
-		if (list.isDisplayed()) {
-			List<WebElement> allValues = list.findElements(By.tagName("li"));
-			for (WebElement x : allValues) {
-				String text = x.getText();
+		click(getDrpDownSort());
+		WebElement hotelList = driver.findElement(By.id("stateProv-menu"));
+		if (hotelList.isDisplayed()) {
+			List<WebElement> allValues = hotelList.findElements(By.tagName("li"));
+			for (WebElement hotelName : allValues) {
+				String text = hotelName.getText();
 				if (text.equalsIgnoreCase(name)) {
-					click(x);
+					click(hotelName);
 
 				}
 			}
@@ -217,7 +212,7 @@ public class VacationPackages extends FunctionalLibrary {
 
 	public void rentingCarBasedOnPrice(String nameOfCars) {
 		WebElement carRental2 = getCarRental();
-		WebElement modeOfCars = getCarRental().findElement(By.tagName("ul"));
+		WebElement modeOfCars = carRental2.findElement(By.tagName("ul"));
 		List<WebElement> listOfCars = modeOfCars.findElements(By.tagName("li"));
 		for (WebElement x : listOfCars) {
 			String cars = x.getText();
