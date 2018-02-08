@@ -49,6 +49,18 @@ public class FlightPOM {
 	@FindBy(id="originCity")
 	private WebElement RFromCity;
 	
+	public WebElement getSMultitab() {
+		return SMultitab;
+	}
+
+
+
+
+	public void setSMultitab(WebElement sMultitab) {
+		SMultitab = sMultitab;
+	}
+
+
 	@FindBy(id="destinationCity")
 	private WebElement RdestCity;
 		
@@ -63,6 +75,12 @@ public class FlightPOM {
 	private WebElement RFindbtn;
 
 	
+	//simple search multicity webelements
+	
+	@FindBy(xpath="//span[text()='Multi-City']")
+	private WebElement SMultitab;
+	
+	
 	
 	public WebElement getRFindbtn() {
 		return RFindbtn;
@@ -76,7 +94,7 @@ public class FlightPOM {
 	}
 
 
-	@FindBy(xpath="//span[@class='ui-icon ui-icon-triangle-1-s']")
+	@FindBy(xpath="//span[text()='1'][1]")
 	private WebElement RPassenger;
 
 	
@@ -155,7 +173,7 @@ public class FlightPOM {
 	@FindBy(id="mc_shopping_departureDate_0")
 	private WebElement MCDepDate;
 	
-	@FindBy(xpath="//span[text()='anytime']")
+	@FindBy(id="mc_shopping_departureTimeOptions_0-button")
 	private WebElement MCDepTime;
 	
 	

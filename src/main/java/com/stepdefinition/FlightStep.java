@@ -3,6 +3,7 @@ package com.stepdefinition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import com.resources.FlightPOM;
 import com.resources.FunctionalLibrary;
@@ -12,7 +13,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class FlightStep extends FunctionalLibrary {
-	
+	FlightPOM FPOM1=new FlightPOM();
 	
 	@Given("^I want to launch delta website$")
 	public void i_want_to_launch_delta_website() throws Throwable {
@@ -36,7 +37,7 @@ public class FlightStep extends FunctionalLibrary {
 	@When("^I Book RoundTrip$")
 	public void i_Book_RoundTrip() throws Throwable {
 		
-		FlightPOM FPOM1=new FlightPOM();
+	//FlightPOM FPOM1=new FlightPOM();
 		//FPOM1.getOneway().click();
 		click(FPOM1.getRoundTrip());
 		
@@ -45,12 +46,27 @@ public class FlightStep extends FunctionalLibrary {
 		
 		setText(FPOM1.getRDepDate(),"01/31/2018");
 		setText(FPOM1.getRRetDate(),"02/04/2018");
-		setText(FPOM1.getRPassenger(),"2");
+		//click(FPOM1.getRPassenger());
+		//FPOM1.getRPassenger().sendKeys("2");
+		//Select SC1=new Select(FPOM1.getRPassenger());
+		//SC1.selectByValue("3");
+		//setText(FPOM1.getRPassenger(),"2");
 	click(FPOM1.getRFindbtn());
 	}
 
 	@When("^I Book Multicity trip$")
 	public void i_Book_Multicity_trip() throws Throwable {
+	/*	//FlightPOM FPOM1=new FlightPOM();
+		click(FPOM1.getSMultitab());
+		
+		setText(FPOM1.getMCFromCity(),"ATL");
+		setText(FPOM1.getMCToCity(),"CSG");
+		setText(FPOM1.getMCDepDate(),"02/01/2018");
+		setText(FPOM1.getDepTime(),"anytime");
+		setText(FPOM1.getMCConnect1(),"ECP");
+		*/
+		
+		
 		}
 
 	@Then("^I click lower price flight$")
