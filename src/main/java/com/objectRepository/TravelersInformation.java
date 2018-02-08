@@ -130,10 +130,9 @@ public class TravelersInformation extends FunctionalLibrary {
 
 	@FindBy(id = "primary_driver-menu")
 	private WebElement primaryDiver;
-	
+
 	@FindBy(xpath = "//button[text()='next']")
 	private WebElement nextButton;
-	
 
 	public WebElement getNextButton() {
 		return nextButton;
