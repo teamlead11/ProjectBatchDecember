@@ -1,7 +1,6 @@
 package com.stepdefinition;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 
 import com.objectRepository.TravelersInformation;
 import com.objectRepository.VacationPackages;
@@ -32,17 +31,18 @@ public class Vacation extends FunctionalLibrary {
 		Thread.sleep(5000);
 //		v.dropDown("1");
 		click(v.getBtnSubmit());
-
+		Thread.sleep(5000);
 	}
 
 	@When("^I book the hotel with lowest price$")
 	public void i_book_the_hotel_with_lowest_price() throws Throwable {
 		VacationPackages v = new VacationPackages();
-		Thread.sleep(2500);
+		Thread.sleep(5000);
 		v.sortingTheHotel("price");
+		Thread.sleep(5000);
 		click(v.getBtnSelect());
 		click(v.getLoadBtn());
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 		
 	}
 
@@ -50,7 +50,6 @@ public class Vacation extends FunctionalLibrary {
 	public void i_book_the_flight_with_lowest_price() throws Throwable {
 		VacationPackages v = new VacationPackages();
 		v.sortingOutboundFlight("price");
-		Thread.sleep(1500);
 		click(v.getBtnSelectOutboundFlight());
 		click(v.getLoadBtn());
 

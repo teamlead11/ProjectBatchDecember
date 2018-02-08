@@ -69,7 +69,7 @@ public class VacationPackages extends FunctionalLibrary {
 	@FindBy(xpath = "driver.findElements(By.xpath(\"//h4[text()='OUR NEW AIRBUS A350']")
 	private WebElement lnkAirBus;
 
-	@FindBy(xpath = "//div[@id='rentalCarSpotlightContainer']")
+	@FindBy(id = "rentalCarSpotlightContainer")
 	private WebElement carRental;
 
 	@FindBy(xpath = "//span[@title='price range minimum']")
@@ -187,7 +187,7 @@ public class VacationPackages extends FunctionalLibrary {
 		WebElement list = driver.findElement(By.id("stateProv-menu"));
 		if (list.isDisplayed()) {
 			List<WebElement> allValues = list.findElements(By.tagName("li"));
-			for(WebElement x : allValues) {
+			for (WebElement x : allValues) {
 				String text = x.getText();
 				if (text.equalsIgnoreCase(name)) {
 					click(x);
