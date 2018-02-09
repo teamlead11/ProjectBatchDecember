@@ -51,7 +51,8 @@ public class FunctionalLibrary {
 	private static String homeWindow = null;
 
 	public static WebDriver driverInit() {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/lib/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "src/test/resources/lib/chromedriver.exe");
+		System.setProperty("webdriver.gecko.driver", "src/test/resources/lib/geckodriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

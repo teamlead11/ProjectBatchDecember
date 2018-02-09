@@ -13,32 +13,7 @@ public class FlightPOM {
 	@FindBy(xpath="//span[text()='One Way']")
 	private WebElement Oneway;
 	
-	public WebElement getRFromCity() {
-		return RFromCity;
-	}
-
-
-
-
-	public void setRFromCity(WebElement rFromCity) {
-		RFromCity = rFromCity;
-	}
-
-
-
-
-	public WebElement getRdestCity() {
-		return RdestCity;
-	}
-
-
-
-
-	public void setRdestCity(WebElement rdestCity) {
-		RdestCity = rdestCity;
-	}
-
-
+	
 	@FindBy(xpath="//span[text()='Round Trip']")
 	private WebElement RoundTrip;
 	
@@ -49,18 +24,9 @@ public class FlightPOM {
 	@FindBy(id="originCity")
 	private WebElement RFromCity;
 	
-	public WebElement getSMultitab() {
-		return SMultitab;
-	}
-
-
-
-
-	public void setSMultitab(WebElement sMultitab) {
-		SMultitab = sMultitab;
-	}
-
-
+	@FindBy(xpath="//li[text()='2']")
+	private WebElement Roundtrippassenger;
+	
 	@FindBy(id="destinationCity")
 	private WebElement RdestCity;
 		
@@ -75,70 +41,22 @@ public class FlightPOM {
 	private WebElement RFindbtn;
 
 	
-	//simple search multicity webelements
-	
-	@FindBy(xpath="//span[text()='Multi-City']")
-	private WebElement SMultitab;
-	
-	
-	
-	public WebElement getRFindbtn() {
-		return RFindbtn;
-	}
-
-
-
-
-	public void setRFindbtn(WebElement rFindbtn) {
-		RFindbtn = rFindbtn;
-	}
-
-
 	@FindBy(xpath="//span[text()='1'][1]")
 	private WebElement RPassenger;
-
+	
+	@FindBy(id="depDateCalIcon")
+	private WebElement Roundtripdepdate;
 	
 
-	public WebElement getRPassenger() {
-		return RPassenger;
-	}
+	@FindBy(xpath="//a[text()='14']")
+	private WebElement Rounddepdateclick;
 
+	@FindBy(id="retDateCalIcon")
+	private WebElement RoundRetdateclick;
 
-
-
-	public void setRPassenger(WebElement rPassenger) {
-		RPassenger = rPassenger;
-	}
-
-
-
-
-	public WebElement getRDepDate() {
-		return RDepDate;
-	}
-
-
-
-
-	public void setRDepDate(WebElement rDepDate) {
-		RDepDate = rDepDate;
-	}
-
-
-
-
-	public WebElement getRRetDate() {
-		return RRetDate;
-	}
-
-
-
-
-	public void setRRetDate(WebElement rRetDate) {
-		RRetDate = rRetDate;
-	}
-
-
+	@FindBy(xpath="//a[text()='25']")
+	private WebElement Roundretdateselect;
+	
 	@FindBy(id="returnDate")
 	private WebElement RRetDate;
 
@@ -198,6 +116,190 @@ public class FlightPOM {
 	
 	@FindBy(id="submitAdvanced")
 	private WebElement MCfindflightbtn;
+
+
+	
+	
+	public WebElement getRFromCity() {
+		return RFromCity;
+	}
+
+
+
+
+	public void setRFromCity(WebElement rFromCity) {
+		RFromCity = rFromCity;
+	}
+
+
+
+
+	public WebElement getRdestCity() {
+		return RdestCity;
+	}
+
+
+
+
+	public void setRdestCity(WebElement rdestCity) {
+		RdestCity = rdestCity;
+	}
+
+
+
+
+
+	public WebElement getRoundtrippassenger() {
+		return Roundtrippassenger;
+	}
+
+
+
+
+	public void setRoundtrippassenger(WebElement roundtrippassenger) {
+		Roundtrippassenger = roundtrippassenger;
+	}
+
+
+
+
+	public WebElement getSMultitab() {
+		return SMultitab;
+	}
+
+
+
+
+	public void setSMultitab(WebElement sMultitab) {
+		SMultitab = sMultitab;
+	}
+
+
+
+	
+	//simple search multicity webelements
+	
+	@FindBy(xpath="//span[text()='Multi-City']")
+	private WebElement SMultitab;
+	
+	
+	
+	public WebElement getRFindbtn() {
+		return RFindbtn;
+	}
+
+
+
+
+	public void setRFindbtn(WebElement rFindbtn) {
+		RFindbtn = rFindbtn;
+	}
+
+
+	
+
+	public WebElement getRoundRetdateclick() {
+		return RoundRetdateclick;
+	}
+
+
+
+
+	public void setRoundRetdateclick(WebElement roundRetdateclick) {
+		RoundRetdateclick = roundRetdateclick;
+	}
+
+
+
+
+	public WebElement getRoundretdateselect() {
+		return Roundretdateselect;
+	}
+
+
+
+
+	public void setRoundretdateselect(WebElement roundretdateselect) {
+		Roundretdateselect = roundretdateselect;
+	}
+
+
+
+
+	public WebElement getRounddepdateclick() {
+		return Rounddepdateclick;
+	}
+
+
+
+
+	public void setRounddepdateclick(WebElement rounddepdateclick) {
+		Rounddepdateclick = rounddepdateclick;
+	}
+
+
+
+
+	public WebElement getRoundtripdepdate() {
+		return Roundtripdepdate;
+	}
+
+
+
+
+	public void setRoundtripdepdate(WebElement roundtripdepdate) {
+		Roundtripdepdate = roundtripdepdate;
+	}
+
+
+
+
+	//public void setRdepdate(WebElement rdepdate) {
+		//Rdepdate = rdepdate;
+	//}
+
+
+
+
+	public WebElement getRPassenger() {
+		return RPassenger;
+	}
+
+
+
+
+	public void setRPassenger(WebElement rPassenger) {
+		RPassenger = rPassenger;
+	}
+
+
+
+
+	public WebElement getRDepDate() {
+		return RDepDate;
+	}
+
+
+
+
+	public void setRDepDate(WebElement rDepDate) {
+		RDepDate = rDepDate;
+	}
+
+
+
+
+	public WebElement getRRetDate() {
+		return RRetDate;
+	}
+
+
+
+
+	public void setRRetDate(WebElement rRetDate) {
+		RRetDate = rRetDate;
+	}
+
 
 
 

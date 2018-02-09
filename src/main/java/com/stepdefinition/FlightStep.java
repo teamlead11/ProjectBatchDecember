@@ -44,9 +44,18 @@ public class FlightStep extends FunctionalLibrary {
 		setText(FPOM1.getRFromCity(),"ATL");
 		setText(FPOM1.getRdestCity(),"ABY");
 		
-		setText(FPOM1.getRDepDate(),"01/31/2018");
-		setText(FPOM1.getRRetDate(),"02/04/2018");
-		//click(FPOM1.getRPassenger());
+		click(FPOM1.getRoundtripdepdate());
+		click(FPOM1.getRounddepdateclick());
+		
+		click(FPOM1.getRoundRetdateclick());
+		click(FPOM1.getRoundretdateselect());
+		
+		click(FPOM1.getRPassenger());
+		click(FPOM1.getRoundtrippassenger());
+		
+		//setText(FPOM1.getRDepDate(),"01/31/2018");
+		//setText(FPOM1.getRRetDate(),"02/04/2018");
+		
 		//FPOM1.getRPassenger().sendKeys("2");
 		//Select SC1=new Select(FPOM1.getRPassenger());
 		//SC1.selectByValue("3");
