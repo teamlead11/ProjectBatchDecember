@@ -12,8 +12,10 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src\\test\\resources\\feature\\Delta.feature",glue = { "com.stepdefinition" }, plugin = {
-"com.resources.ExtentCucumberFormatter:" })
+
+@CucumberOptions(features = "src\\test\\resources\\feature\\FlightStatus.feature",glue = { "com.stepdefinition" }, plugin = {
+		"com.resources.ExtentCucumberFormatter:"} )
+
 
 public class TestRunner {
 
@@ -32,4 +34,5 @@ public class TestRunner {
 		File file = new File(filePath);
 		ExtentCucumberFormatter.setExtentHtmlReport(file);
 	}
+	
 }
