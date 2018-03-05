@@ -1,4 +1,4 @@
-package com.objectRepository;
+package com.ObjectRepository;
 
 import java.util.List;
 

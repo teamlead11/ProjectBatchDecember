@@ -2,8 +2,8 @@ package com.stepdefinition;
 
 import org.openqa.selenium.By;
 
-import com.objectRepository.TravelersInformation;
-import com.objectRepository.VacationPackages;
+import com.ObjectRepository.TravelersInformation;
+import com.ObjectRepository.VacationPackages;
 import com.resources.FunctionalLibrary;
 
 import cucumber.api.java.en.Given;
