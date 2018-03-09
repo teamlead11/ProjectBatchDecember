@@ -3,7 +3,7 @@ package com.stepdefinition;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 
-import com.objectRepository.VacationPackages;
+import com.ObjectRepository.VacationPackages;
 import com.resources.FunctionalLibrary;
 
 import cucumber.api.java.en.Given;
