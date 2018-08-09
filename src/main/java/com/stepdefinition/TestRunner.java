@@ -13,7 +13,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src\\test\\resources\\feature\\HinduNames.feature",glue = { "com.stepdefinition" }, plugin = {
-		"com.resources.ExtentCucumberFormatter:"} )
+		"com.resources.ExtentCucumberFormatter:"},dryRun =true,monochrome=true,strict=true )
 
 public class TestRunner {
 

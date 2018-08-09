@@ -1,4 +1,3 @@
-
 package com.resources;
 
 import java.text.*;
@@ -18,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
+
 import org.apache.commons.io.FileUtils;
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
@@ -33,33 +33,41 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.security.UserAndPassword;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
 import org.openqa.selenium.Keys;
+
 import static io.restassured.RestAssured.given;
 
 public class FunctionalLibrary {
 	public static WebDriver driver;
 	private static String homeWindow = null;
 
-	public static WebDriver driverInit() {
+	public static WebDriver driverInit(String BrowserName) {
 
-		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\lib\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver",
+				"src\\test\\resources\\lib\\chromedriver.exe");
+		if (BrowserName.equals("chrome")) {
+			driver = new ChromeDriver();
+		}
 
-		driver = new ChromeDriver();
+		if (BrowserName.equals("chrome")) {
+			driver = new FirefoxDriver();
+		}
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		return driver;
-
 	}
 
 	/**
@@ -77,13 +85,15 @@ public class FunctionalLibrary {
 	 * @param password
 	 * @return
 	 */
-	public static WebDriver authentication_Alert(String username, String password) {
+	public static WebDriver authentication_Alert(String username,
+			String password) {
 		try {
 			Alert alert = driver.switchTo().alert();
 			alert.authenticateUsing(new UserAndPassword(username, password));
 			Reporter.addStepLogPass("Handled the authentication alert successfuly");
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("Authentication alert handle failed" + e.toString());
+			Reporter.addStepLogInfo("Authentication alert handle failed"
+					+ e.toString());
 		}
 		return driver;
 	}
@@ -124,7 +134,8 @@ public class FunctionalLibrary {
 	 **/
 
 	public static String screenCapture(String imgLocation) {
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File scrFile = ((TakesScreenshot) driver)
+				.getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(scrFile, new File(imgLocation));
 			Reporter.addStepLogPass("Captured screen successfully");
@@ -187,10 +198,12 @@ public class FunctionalLibrary {
 	public static void navigateToUrl(String url) {
 		try {
 			driver.navigate().to(url);
-			Reporter.addStepLogPass("Application launched successfully to" + url);
+			Reporter.addStepLogPass("Application launched successfully to"
+					+ url);
 
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("Failed to load the url" + url + e.getMessage());
+			Reporter.addStepLogInfo("Failed to load the url" + url
+					+ e.getMessage());
 		}
 	}
 
@@ -207,9 +220,11 @@ public class FunctionalLibrary {
 		try {
 			element.clear();
 			element.sendKeys(value);
-			Reporter.addStepLogPass(value + " entered into textbox successfully" + element.toString());
+			Reporter.addStepLogPass(value
+					+ " entered into textbox successfully" + element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("failed to enter" + value + "into" + "textbox " + e.toString());
+			Reporter.addStepLogInfo("failed to enter" + value + "into"
+					+ "textbox " + e.toString());
 		}
 	}
 
@@ -224,9 +239,11 @@ public class FunctionalLibrary {
 			if (element.isDisplayed()) {
 				elementPresent = true;
 			}
-			Reporter.addStepLogPass(element.toString() + "is Displayed successfully");
+			Reporter.addStepLogPass(element.toString()
+					+ "is Displayed successfully");
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("Verify Element Present failed" + e.toString());
+			Reporter.addStepLogInfo("Verify Element Present failed"
+					+ e.toString());
 		}
 		return elementPresent;
 	}
@@ -243,7 +260,8 @@ public class FunctionalLibrary {
 			}
 			Reporter.addStepLogPass("Element is Displayed successfully");
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("Verify Element Present failed" + e.getMessage());
+			Reporter.addStepLogInfo("Verify Element Present failed"
+					+ e.getMessage());
 		}
 		return elementNotPresent;
 	}
@@ -256,10 +274,12 @@ public class FunctionalLibrary {
 	public static void click(WebElement element) {
 		try {
 			element.click();
-			Reporter.addStepLogPass(element.toString() + "element is clicked successfully");
+			Reporter.addStepLogPass(element.toString()
+					+ "element is clicked successfully");
 
 		} catch (Exception e) {
-			Reporter.addStepLogInfo(element.toString() + "element is not clicked" + e.getMessage());
+			Reporter.addStepLogInfo(element.toString()
+					+ "element is not clicked" + e.getMessage());
 		}
 	}
 
@@ -274,9 +294,11 @@ public class FunctionalLibrary {
 			if (element.getText() != null) {
 				text = element.getText();
 			}
-			Reporter.addStepLogPass("text retrieved successfully from element" + element.toString());
+			Reporter.addStepLogPass("text retrieved successfully from element"
+					+ element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("text is not retrieved from element" + element.toString() + e.getMessage());
+			Reporter.addStepLogInfo("text is not retrieved from element"
+					+ element.toString() + e.getMessage());
 		}
 		return text;
 	}
@@ -294,9 +316,11 @@ public class FunctionalLibrary {
 			if (element.getAttribute("value") != null) {
 				value = element.getAttribute("value");
 			}
-			Reporter.addStepLogPass("text retrieved successfully from element" + element.toString());
+			Reporter.addStepLogPass("text retrieved successfully from element"
+					+ element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("text is not retrieved from element" + element.toString() + e.getMessage());
+			Reporter.addStepLogInfo("text is not retrieved from element"
+					+ element.toString() + e.getMessage());
 		}
 		return value;
 	}
@@ -308,9 +332,11 @@ public class FunctionalLibrary {
 		try {
 			Select obj_select = new Select(element);
 			obj_select.selectByValue(value);
-			Reporter.addStepLogPass(value + "selected from dropdown " + element.toString());
+			Reporter.addStepLogPass(value + "selected from dropdown "
+					+ element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("failed to select" + value + "from " + element.toString());
+			Reporter.addStepLogInfo("failed to select" + value + "from "
+					+ element.toString());
 		}
 	}
 
@@ -321,9 +347,11 @@ public class FunctionalLibrary {
 		try {
 			Select obj_select = new Select(element);
 			obj_select.selectByVisibleText(text);
-			Reporter.addStepLogPass(text + "selected from dropdown " + element.toString());
+			Reporter.addStepLogPass(text + "selected from dropdown "
+					+ element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("failed to select" + text + "from " + element.toString());
+			Reporter.addStepLogInfo("failed to select" + text + "from "
+					+ element.toString());
 		}
 	}
 
@@ -334,9 +362,11 @@ public class FunctionalLibrary {
 		try {
 			Select obj_select = new Select(element);
 			obj_select.selectByIndex(index);
-			Reporter.addStepLogPass(index + "index selected from dropdown " + element.toString());
+			Reporter.addStepLogPass(index + "index selected from dropdown "
+					+ element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("failed to select" + index + "index" + "from " + element.toString());
+			Reporter.addStepLogInfo("failed to select" + index + "index"
+					+ "from " + element.toString());
 		}
 	}
 
@@ -407,10 +437,11 @@ public class FunctionalLibrary {
 			for (int i = 0; i < optionElements.size(); i++) {
 				AvailableOptions.add(optionElements.get(i).getText());
 			}
-			Reporter.addStepLogPass("get available options from dropdown is success" + element.toString());
+			Reporter.addStepLogPass("get available options from dropdown is success"
+					+ element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo(
-					"get available options from dropdown is failed" + e.getMessage() + element.toString());
+			Reporter.addStepLogInfo("get available options from dropdown is failed"
+					+ e.getMessage() + element.toString());
 		}
 		return AvailableOptions;
 	}
@@ -422,13 +453,17 @@ public class FunctionalLibrary {
 	 */
 	public void jsMouseOver(WebElement element) {
 		try {
-			String code = "var fireOnThis = arguments[0];" + "var evObj = document.createEvent('MouseEvents');"
-					+ "evObj.initEvent( 'mouseover', true, true );" + "fireOnThis.dispatchEvent(evObj);";
+			String code = "var fireOnThis = arguments[0];"
+					+ "var evObj = document.createEvent('MouseEvents');"
+					+ "evObj.initEvent( 'mouseover', true, true );"
+					+ "fireOnThis.dispatchEvent(evObj);";
 			((JavascriptExecutor) driver).executeScript(code, element);
-			Reporter.addStepLogPass("Mouseover to the element" + element.toString() + "is success");
+			Reporter.addStepLogPass("Mouseover to the element"
+					+ element.toString() + "is success");
 
 		} catch (Exception e) {
-			Reporter.addStepLogPass("Mouseover to the element" + element.toString() + "is failed");
+			Reporter.addStepLogPass("Mouseover to the element"
+					+ element.toString() + "is failed");
 		}
 	}
 
@@ -436,9 +471,11 @@ public class FunctionalLibrary {
 		try {
 			Actions action = new Actions(driver);
 			action.moveToElement(element).build().perform();
-			Reporter.addStepLogPass("Mouseover to the element" + element.toString() + "is success");
+			Reporter.addStepLogPass("Mouseover to the element"
+					+ element.toString() + "is success");
 		} catch (Exception e) {
-			Reporter.addStepLogPass("Mouseover to the element" + element.toString() + "is failed");
+			Reporter.addStepLogPass("Mouseover to the element"
+					+ element.toString() + "is failed");
 		}
 	}
 
@@ -447,13 +484,14 @@ public class FunctionalLibrary {
 	 */
 	public static void jsWaitForPageLoad() {
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		String pageReadyState = (String) ((JavascriptExecutor) driver).executeScript("return document.readyState");
+		String pageReadyState = (String) ((JavascriptExecutor) driver)
+				.executeScript("return document.readyState");
 		while (!pageReadyState.equals("complete")) {
-			pageReadyState = (String) ((JavascriptExecutor) driver).executeScript("return document.readyState");
+			pageReadyState = (String) ((JavascriptExecutor) driver)
+					.executeScript("return document.readyState");
 		}
 
 	}
-
 
 	public static String getRandomString(int length) {
 		char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
@@ -485,9 +523,11 @@ public class FunctionalLibrary {
 
 	public static BigDecimal truncateDecimal(double x, int numberofDecimals) {
 		if (x > 0) {
-			return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals, BigDecimal.ROUND_FLOOR);
+			return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals,
+					BigDecimal.ROUND_FLOOR);
 		} else {
-			return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals, BigDecimal.ROUND_CEILING);
+			return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals,
+					BigDecimal.ROUND_CEILING);
 		}
 	}
 
@@ -498,7 +538,8 @@ public class FunctionalLibrary {
 	 * @return String
 	 */
 
-	public static String getDefaultDropDownValue(WebElement element) throws InterruptedException {
+	public static String getDefaultDropDownValue(WebElement element)
+			throws InterruptedException {
 
 		Select obj_select = new Select(element);
 		return obj_select.getFirstSelectedOption().getText();
@@ -508,7 +549,8 @@ public class FunctionalLibrary {
 	/**
 	 * To get checkbox is selected or not from list of checkboxes
 	 * 
-	 * @param List<WebElement>
+	 * @param List
+	 *            <WebElement>
 	 * @return
 	 */
 	public static boolean isCheckBoxSelectedInDropdown(List<WebElement> elements) {
@@ -526,9 +568,11 @@ public class FunctionalLibrary {
 		try {
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", element);
-			Reporter.addStepLogPass(element.toString() + "element is clicked successfully");
+			Reporter.addStepLogPass(element.toString()
+					+ "element is clicked successfully");
 		} catch (Exception e) {
-			Reporter.addStepLogInfo(element.toString() + "element is not clicked" + e.getMessage());
+			Reporter.addStepLogInfo(element.toString()
+					+ "element is not clicked" + e.getMessage());
 		}
 	}
 
@@ -545,7 +589,8 @@ public class FunctionalLibrary {
 
 			js.executeScript("window.scrollBy(0, " + -yScrollPosition + ")", "");
 
-			Reporter.addStepLogPass("scroll page up" + "page is scrolled up successfully");
+			Reporter.addStepLogPass("scroll page up"
+					+ "page is scrolled up successfully");
 		} catch (Exception e) {
 			Reporter.addStepLogInfo("page is not scrolled up ");
 		}
@@ -564,7 +609,8 @@ public class FunctionalLibrary {
 			size = element.size();
 			Reporter.addStepLogPass("size of list retrieved successfuly");
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("value is not retrieved from textbox" + e.toString());
+			Reporter.addStepLogInfo("value is not retrieved from textbox"
+					+ e.toString());
 		}
 		return size;
 	}
@@ -638,7 +684,8 @@ public class FunctionalLibrary {
 	 * @return boolean
 	 */
 
-	public boolean verifyOptionIsAvailableInDropDown(WebElement dropDown, String option) {
+	public boolean verifyOptionIsAvailableInDropDown(WebElement dropDown,
+			String option) {
 		boolean flag = false;
 		List<String> TaxSetupOption = getOptionFromDropDown(dropDown);
 		for (String string : TaxSetupOption) {
@@ -657,13 +704,15 @@ public class FunctionalLibrary {
 	 * @author Ganesh Bharathy
 	 * @return List of selected values
 	 */
-	public static List<String> selectMultipleValuesFromList(WebElement Listbox, int count) {
+	public static List<String> selectMultipleValuesFromList(WebElement Listbox,
+			int count) {
 		List<String> codeList = new LinkedList<>();
 		Select select = new Select(Listbox);
 		Actions builder = new Actions(driver);
 		for (int i = 0; i < count; i++) {
 
-			builder.keyDown(Keys.CONTROL).click(select.getOptions().get(i)).keyUp(Keys.CONTROL);
+			builder.keyDown(Keys.CONTROL).click(select.getOptions().get(i))
+					.keyUp(Keys.CONTROL);
 			builder.build().perform();
 			codeList.add(select.getAllSelectedOptions().get(i).getText());
 		}
@@ -790,7 +839,8 @@ public class FunctionalLibrary {
 	 * @throws InterruptedException
 	 * @throws AWTException
 	 */
-	public void enterNumberUsingkeypress(String number) throws InterruptedException, AWTException {
+	public void enterNumberUsingkeypress(String number)
+			throws InterruptedException, AWTException {
 		Robot robot = new Robot();
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 		map.put('0', KeyEvent.VK_0);
@@ -847,7 +897,8 @@ public class FunctionalLibrary {
 
 			js.executeScript("window.scrollBy(0, " + yScrollPosition + ")", "");
 
-			Reporter.addStepLogPass("scroll page down" + "page is scrolled down successfully");
+			Reporter.addStepLogPass("scroll page down"
+					+ "page is scrolled down successfully");
 		} catch (Exception e) {
 			Reporter.addStepLogInfo("page is not scrolled down ");
 		}
@@ -889,9 +940,12 @@ public class FunctionalLibrary {
 	}
 
 	public RequestSpecification getRequestSpecification() {
-		RequestSpecification reqSpecification = RestAssured.given().contentType(ContentType.JSON)
-				.pathParam("chains", "1").pathParam("hotels", "15222");
-		int status = reqSpecification.when().get("/chains/{chains}/hotels/{hotels}/inventory/oooCodes").getStatusCode();
+		RequestSpecification reqSpecification = RestAssured.given()
+				.contentType(ContentType.JSON).pathParam("chains", "1")
+				.pathParam("hotels", "15222");
+		int status = reqSpecification.when()
+				.get("/chains/{chains}/hotels/{hotels}/inventory/oooCodes")
+				.getStatusCode();
 		if (status == 200) {
 			Reporter.addStepLogPass("successfully accessed the webservice");
 		} else {
@@ -905,10 +959,14 @@ public class FunctionalLibrary {
 		return response;
 	}
 
-	public RequestSpecification postRequest(String field, String fieldValue, JSONObject createOooCodesjsonBody) {
+	public RequestSpecification postRequest(String field, String fieldValue,
+			JSONObject createOooCodesjsonBody) {
 		RequestSpecification requestSpecification = getRequestSpecification();
-		given().body(createOooCodesjsonBody).when().contentType("application/json")
-				.post("/chains/{chains}/hotels/{hotels}/inventory/oooCode", 1, 15222);
+		given().body(createOooCodesjsonBody)
+				.when()
+				.contentType("application/json")
+				.post("/chains/{chains}/hotels/{hotels}/inventory/oooCode", 1,
+						15222);
 		System.out.println("verify" + requestSpecification.toString());
 		return requestSpecification;
 	}
