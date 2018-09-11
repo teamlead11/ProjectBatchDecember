@@ -1,5 +1,6 @@
 package com.ObjectRepository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -7,119 +8,65 @@ import org.openqa.selenium.support.PageFactory;
 import com.resources.FunctionalLibrary;
 
 public class HomePage {
+
 	public HomePage() {
 		PageFactory.initElements(FunctionalLibrary.driver, this);
 
 	}
 
-	@FindBy(xpath = "//span[text()='One Way']")
-	private WebElement btnOneWay;
+	@FindBy(id = "fromAirportName")
+	private WebElement lnk_SourceName;
 
-	@FindBy(id = "originCity")
-	private WebElement btnOrigin;
+	@FindBy(id = "search_input")
+	private WebElement txt_sourceName;
 
-	@FindBy(id = "destinationCity")
-	private WebElement btnDest;
+	@FindBy(id = "toAirportName")
+	private WebElement lnk_DestName;
 
-	@FindBy(id = "departureDate")
-	private WebElement btnDate;
+	@FindBy(id = "search_input")
+	private WebElement txt_DestName;
 
-	@FindBy(xpath = "//span[text()='Exact Dates']")
-	private WebElement btnExactDate;
+	@FindBy(id = "selectTripType-val")
+	private WebElement DropDown_TripType;
 
-	@FindBy(xpath = "//span[text()='Flexible Days']")
-	private WebElement btnFlexibleDays;
+	@FindBy(id = "btn-book-submit")
+	private WebElement Btn_Submit;
 
-	@FindBy(xpath = "//span[text()='Money']")
-	private WebElement btnMoney;
+	@FindBy(id = "input_departureDate_1")
+	private WebElement Btn_Depart;
 
-	@FindBy(xpath = "//span[text()='Miles']")
-	private WebElement btnMiles;
-
-	@FindBy(xpath = "//span[@id='paxCount-button'])")
-	private WebElement btnPassengers;
-
-	@FindBy(id = "findFlightsSubmit")
-	private WebElement btnFindFlight;
-
-	public WebElement getBtnOneWay() {
-		return btnOneWay;
+	public WebElement getLnk_SourceName() {
+		return lnk_SourceName;
 	}
 
-	public void setBtnOneWay(WebElement btnOneWay) {
-		this.btnOneWay = btnOneWay;
+	public WebElement getBtn_Depart() {
+		return Btn_Depart;
 	}
 
-	public WebElement getBtnOrigin() {
-		return btnOrigin;
+	public WebElement getTxt_sourceName() {
+		return txt_sourceName;
 	}
 
-	public void setBtnOrigin(WebElement btnOrigin) {
-		this.btnOrigin = btnOrigin;
+	public WebElement getLnk_DestName() {
+		return lnk_DestName;
 	}
 
-	public WebElement getBtnDestination() {
-		return btnDest;
+	public WebElement getTxt_DestName() {
+		return txt_DestName;
 	}
 
-	public void setBtnDestination(WebElement btnDest) {
-		this.btnDest = btnDest;
+	public WebElement getDropDown_TripType() {
+		return DropDown_TripType;
 	}
 
-	public WebElement getBtnDate() {
-		return btnDate;
+	public WebElement getBtn_Submit() {
+		return Btn_Submit;
 	}
 
-	public void setBtnDate(WebElement btnDate) {
-		this.btnDate = btnDate;
-	}
+	public void SelectDateFromWebCalendar(String date) {
 
-	public WebElement getBtnExactDate() {
-		return btnExactDate;
+		String locator = "//div//table//tbody//tr//td//a[contains(@data-date,'$')]";
+		locator = locator.replace("$", date);
+		FunctionalLibrary.click(FunctionalLibrary.driver.findElement(By.xpath(locator)));
 	}
-
-	public void setBtnExactDate(WebElement btnExactDate) {
-		this.btnExactDate = btnExactDate;
-	}
-
-	public WebElement getBtnFlexibleDays() {
-		return btnFlexibleDays;
-	}
-
-	public void setBtnFlexibleDays(WebElement btnFlexibleDays) {
-		this.btnFlexibleDays = btnFlexibleDays;
-	}
-
-	public WebElement getBtnMoney() {
-		return btnMoney;
-	}
-
-	public void setBtnMoney(WebElement btnMoney) {
-		this.btnMoney = btnMoney;
-	}
-
-	public WebElement getBtnMiles() {
-		return btnMiles;
-	}
-
-	public void setBtnMiles(WebElement btnMiles) {
-		this.btnMiles = btnMiles;
-	}
-
-	public WebElement getBtnPassengers() {
-		return btnPassengers;
-	}
-
-	public void setBtnPassengers(WebElement btnPassengers) {
-		this.btnPassengers = btnPassengers;
-	}
-
-	public WebElement getBtnFindFlight() {
-		return btnFindFlight;
-	}
-
-	public void setBtnFlight(WebElement btnFlight) {
-		this.btnFindFlight = btnFlight;
-	}
-
 }
