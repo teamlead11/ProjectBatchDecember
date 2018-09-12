@@ -35,8 +35,15 @@ public class HomePage {
 	@FindBy(id = "input_departureDate_1")
 	private WebElement Btn_Depart;
 
+	@FindBy(xpath = "//li[@class='airport-list']")
+	private WebElement List_Airport;
+
 	public WebElement getLnk_SourceName() {
 		return lnk_SourceName;
+	}
+
+	public WebElement getEle_AiportList() {
+		return List_Airport;
 	}
 
 	public WebElement getBtn_Depart() {

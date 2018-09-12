@@ -23,14 +23,16 @@ public class HomePageSteps extends FunctionalLibrary {
 	}
 
 	@When("^The user enters source and destination$")
-	public void the_user_enters_source_and_destination() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
+	public void the_user_enters_source_and_destination(DataTable TravelDetails) throws Throwable {
+		List<String> myList = TravelDetails.asList(String.class);
 		HomePage home = new HomePage();
 		click(home.getLnk_SourceName());
-		setText(home.getTxt_sourceName(), "ATL");
+		setText(home.getTxt_sourceName(), myList.get(0));
+		waitForElementVisibility(home.getEle_AiportList());
 		home.getTxt_sourceName().sendKeys(Keys.ENTER);
 		click(home.getLnk_DestName());
-		setText(home.getTxt_DestName(), "MSP");
+		setText(home.getTxt_DestName(), myList.get(1));
+		waitForElementVisibility(home.getEle_AiportList());
 		home.getTxt_DestName().sendKeys(Keys.ENTER);
 
 	}
