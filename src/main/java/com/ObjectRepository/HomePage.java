@@ -18,13 +18,10 @@ public class HomePage {
 	private WebElement lnk_SourceName;
 
 	@FindBy(id = "search_input")
-	private WebElement txt_sourceName;
+	private WebElement txt_SearchInputName;
 
 	@FindBy(id = "toAirportName")
 	private WebElement lnk_DestName;
-
-	@FindBy(id = "search_input")
-	private WebElement txt_DestName;
 
 	@FindBy(id = "selectTripType-val")
 	private WebElement DropDown_TripType;
@@ -38,10 +35,23 @@ public class HomePage {
 	@FindBy(xpath = "//li[@class='airport-list']")
 	private WebElement List_Airport;
 
+	@FindBy(xpath = "(//span[@class='select-ui-icon icon-Dropdown-caret'])[1]")
+	private WebElement tripType_Arrow;
+
+	@FindBy(xpath = "(//span[@class='select-ui-icon icon-Dropdown-caret'])[2]")
+	private WebElement passengerCount_Arrow;
+	
 	public WebElement getLnk_SourceName() {
 		return lnk_SourceName;
 	}
 
+	public WebElement getDrp_tripTypeDownArrow() {
+		return tripType_Arrow;
+	}
+
+	public WebElement getDrp_PassengerCountDownArrow() {
+		return passengerCount_Arrow;
+	}
 	public WebElement getEle_AiportList() {
 		return List_Airport;
 	}
@@ -50,16 +60,12 @@ public class HomePage {
 		return Btn_Depart;
 	}
 
-	public WebElement getTxt_sourceName() {
-		return txt_sourceName;
+	public WebElement getTxt_txt_SearchInputName() {
+		return txt_SearchInputName;
 	}
 
 	public WebElement getLnk_DestName() {
 		return lnk_DestName;
-	}
-
-	public WebElement getTxt_DestName() {
-		return txt_DestName;
 	}
 
 	public WebElement getDropDown_TripType() {
@@ -75,5 +81,12 @@ public class HomePage {
 		String locator = "//div//table//tbody//tr//td//a[contains(@data-date,'$')]";
 		locator = locator.replace("$", date);
 		FunctionalLibrary.click(FunctionalLibrary.driver.findElement(By.xpath(locator)));
+	}
+
+	public void SelectByText(String value) {
+		String locator = "//li[text()='$']";
+		locator = locator.replace("$", value);
+		FunctionalLibrary.driver.findElement(By.xpath(locator));
+
 	}
 }

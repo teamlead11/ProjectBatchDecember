@@ -27,13 +27,13 @@ public class HomePageSteps extends FunctionalLibrary {
 		List<String> myList = TravelDetails.asList(String.class);
 		HomePage home = new HomePage();
 		click(home.getLnk_SourceName());
-		setText(home.getTxt_sourceName(), myList.get(0));
+		setText(home.getTxt_txt_SearchInputName(), myList.get(0));
 		waitForElementVisibility(home.getEle_AiportList());
-		home.getTxt_sourceName().sendKeys(Keys.ENTER);
+		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
 		click(home.getLnk_DestName());
-		setText(home.getTxt_DestName(), myList.get(1));
+		setText(home.getTxt_txt_SearchInputName(), myList.get(1));
 		waitForElementVisibility(home.getEle_AiportList());
-		home.getTxt_DestName().sendKeys(Keys.ENTER);
+		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
 
 	}
 
@@ -68,4 +68,29 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getBtn_Submit());
 	}
 
+	@When("^The user selects source and destination$")
+	public void the_user_selects_source_and_destination(DataTable Traveldetails) throws Throwable {
+		List<String> tripList = Traveldetails.asList(String.class);
+
+		HomePage home = new HomePage();
+		click(home.getLnk_SourceName());
+		setText(home.getTxt_txt_SearchInputName(), tripList.get(0));
+		waitForElementVisibility(home.getEle_AiportList());
+		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
+		click(home.getLnk_DestName());
+		setText(home.getTxt_txt_SearchInputName(), tripList.get(1));
+		waitForElementVisibility(home.getEle_AiportList());
+		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
+	}
+
+	@When("^The user selects trip type, dates and number of passengers$")
+	public void the_user_selects_trip_type_dates_and_number_of_passengers(DataTable TripDetails) throws Throwable {
+		HomePage home = new HomePage();
+		List<String> tripList = TripDetails.asList(String.class);
+		click(home.getDrp_tripTypeDownArrow());
+		home.SelectByText(tripList.get(0));
+		click(home.getBtn_Depart());
+		home.SelectDateFromWebCalendar(tripList.get(1));
+		home.SelectDateFromWebCalendar(tripList.get(2));
+	}
 }
