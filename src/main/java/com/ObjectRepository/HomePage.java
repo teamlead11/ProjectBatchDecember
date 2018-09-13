@@ -86,7 +86,7 @@ public class HomePage {
 	public void SelectByText(String value) {
 		String locator = "//li[text()='$']";
 		locator = locator.replace("$", value);
-		FunctionalLibrary.driver.findElement(By.xpath(locator));
+		FunctionalLibrary.driver.findElement(By.xpath(locator)).click();
 
 	}
 }

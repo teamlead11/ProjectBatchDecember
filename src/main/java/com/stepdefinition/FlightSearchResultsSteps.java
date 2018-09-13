@@ -24,6 +24,7 @@ public class FlightSearchResultsSteps extends FunctionalLibrary {
 
 		List<String> flightLists = flightList.asList(String.class);
 		FlightSearchResultsPage searchRs = new FlightSearchResultsPage();
+		waitForElementClickable(searchRs.getLnk_FlightNum().get(0));
 		List<WebElement> actualFlightListElements = searchRs.getLnk_FlightNum();
 		List<String> actualFlightLists = new ArrayList<>();
 		for (int i = 0; i < actualFlightListElements.size(); i++) {

@@ -92,5 +92,9 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getBtn_Depart());
 		home.SelectDateFromWebCalendar(tripList.get(1));
 		home.SelectDateFromWebCalendar(tripList.get(2));
+		click(home.getDrp_PassengerCountDownArrow());
+		home.SelectByText(tripList.get(3));
+		click(home.getBtn_Submit());
+		
 	}
 }
