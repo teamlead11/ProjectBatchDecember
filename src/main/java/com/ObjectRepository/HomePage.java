@@ -40,9 +40,16 @@ public class HomePage {
 
 	@FindBy(xpath = "(//span[@class='select-ui-icon icon-Dropdown-caret'])[2]")
 	private WebElement passengerCount_Arrow;
-	
+
+	@FindBy(xpath = "//a[contains(@class,'flightstatus')]")
+	private WebElement menuFlighStatus;
+
 	public WebElement getLnk_SourceName() {
 		return lnk_SourceName;
+	}
+
+	public WebElement getLnk_FlightStatus() {
+		return menuFlighStatus;
 	}
 
 	public WebElement getDrp_tripTypeDownArrow() {
@@ -52,6 +59,7 @@ public class HomePage {
 	public WebElement getDrp_PassengerCountDownArrow() {
 		return passengerCount_Arrow;
 	}
+
 	public WebElement getEle_AiportList() {
 		return List_Airport;
 	}

@@ -12,8 +12,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src\\test\\resources\\feature\\BookAflight\\RoundTrip.feature", glue = {
-		"com.stepdefinition" }, plugin = {"com.resources.ExtentCucumberFormatter:" }, dryRun = false, monochrome = true)
+@CucumberOptions(features = "src\\test\\resources\\feature\\FlightStatus\\FlightListvalidation.feature", glue = {
+		"com.stepdefinition" }, plugin = {
+				"com.resources.ExtentCucumberFormatter:" }, dryRun = false, monochrome = true)
 
 public class TestRunner {
 

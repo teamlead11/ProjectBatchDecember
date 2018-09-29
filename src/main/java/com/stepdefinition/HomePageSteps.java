@@ -80,7 +80,7 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getLnk_DestName());
 		setText(home.getTxt_txt_SearchInputName(), tripList.get(1));
 		waitForElementVisibility(home.getEle_AiportList());
-		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
+		home.getTxt_txt_SearchInputName().sendKeys("Hi", "");
 	}
 
 	@When("^The user selects trip type, dates and number of passengers$")
@@ -95,6 +95,12 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getDrp_PassengerCountDownArrow());
 		home.SelectByText(tripList.get(3));
 		click(home.getBtn_Submit());
-		
+
+	}
+
+	@Given("^The user naviagates to flight status page$")
+	public void the_user_naviagates_to_flight_status_page() throws Throwable {
+		HomePage home = new HomePage();
+		click(home.getLnk_FlightStatus());
 	}
 }

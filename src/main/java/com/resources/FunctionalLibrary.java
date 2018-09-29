@@ -34,6 +34,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.security.UserAndPassword;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -57,7 +58,15 @@ public class FunctionalLibrary {
 
 		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\lib\\chromedriver.exe");
 		if (BrowserName.equals("chrome")) {
-			driver = new ChromeDriver();
+			 driver = new ChromeDriver();
+		}
+
+		else if (BrowserName.equals("ie")) {
+			 driver = new InternetExplorerDriver();
+		}
+
+		else if (BrowserName.equals("firefox")) {
+				driver = new FirefoxDriver();
 		}
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
