@@ -2,35 +2,72 @@ package com.ObjectRepository;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.resources.FunctionalLibrary;
 
 public class FlightInfo {
 
-	@FindBy(xpath="//img[@id='ctryIcon']")
+	public FlightInfo() {
+		
+		PageFactory.initElements(FunctionalLibrary.driver, this);
+
+	}
+
+	@FindBy (id="departcitylink")
+	private WebElement departcitylink;
+	
+	@FindBy(id="arrivalcitylink")
+	private WebElement arrivalcitylink;
+	
+	@FindBy(id="search_input")
+	private WebElement txt_SearchInput;
+	
+	@FindBy(className="airport-list")
+	private WebElement airportList;
+	
+	
+	@FindBy(xpath = "//img[@id='ctryIcon']")
 	private WebElement routeDownArrow;
-	
-	@FindBy(xpath="//span[text()='Route']")
+
+	@FindBy(xpath = "//span[text()='Route']")
 	private WebElement drpDwn_Route;
-	
-	@FindBy(id="fromAirport")
+
+	@FindBy(id = "fromAirport")
 	private WebElement txtBox_Origin;
-	
-	@FindBy(id="ui-id-15")
+
+	@FindBy(id = "ui-id-15")
 	private WebElement sourceDrpdwnOption;
-	
-	@FindBy(id="toAirport")
+
+	@FindBy(id = "toAirport")
 	private WebElement txtBox_Destination;
-	
-	@FindBy(id="ui-id-16")
+
+	@FindBy(id = "ui-id-16")
 	private WebElement destinationDrpdwnOption;
-	
-	@FindBy(id="departureDateIcon")
+
+	@FindBy(id = "input_departureDate_1")
 	private WebElement depatureDateIcon;
+
+
+	@FindBy(id = "btn-flight-sts-submit")
+	private WebElement flightSubmitButton;
+
 	
-	@FindBy(xpath="//td[contains(@aria-label,'29')]")
-	private WebElement DateSeptember29;
-	
-	@FindBy(xpath="//div[contains(@class,'flightstatuscall')]//button")
-	private WebElement flightStatusButton;
+	public WebElement getDepartCityIcon() {
+		return departcitylink;
+	}
+
+	public WebElement getArrivalCityIcon() {
+		return arrivalcitylink;
+	}
+
+	public WebElement getTxt_SearchInput() {
+		return txt_SearchInput;
+	}
+
+	public WebElement getAirportList() {
+		return airportList;
+	}
 
 	public WebElement getRouteDownArrow() {
 		return routeDownArrow;
@@ -60,14 +97,9 @@ public class FlightInfo {
 		return depatureDateIcon;
 	}
 
-	public WebElement getDateSeptember29() {
-		return DateSeptember29;
+
+	public WebElement getFlightSubmitButton() {
+		return flightSubmitButton;
 	}
 
-	public WebElement getFlightStatusButton() {
-		return flightStatusButton;
-	}
-	
-	
-	
 }

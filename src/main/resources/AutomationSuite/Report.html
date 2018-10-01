@@ -32,7 +32,6 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
-			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -46,7 +45,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Sep 13, 2018 11:18:02 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Oct 1, 2018 11:37:15 AM</span>
 				</a>
 			</li>
 			<li>
@@ -72,7 +71,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -86,6 +84,7 @@
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
 					<li><a href='#'>@tag</a></li>
+					<li><a href='#'>@tag1</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -133,10 +132,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>5</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -148,10 +147,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='70.588%'><span class='strong'>12</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>16</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='11.765%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='17.647%'>3</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -166,17 +165,17 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Verify round trip functionality</span>
-						<span class='test-time'>Sep 13, 2018 11:18:02 AM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>To list the available flights</span>
+						<span class='test-time'>Oct 1, 2018 11:37:15 AM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Sep 13, 2018 11:18:02 AM</span>
-	<span class='label end-time'>Sep 13, 2018 11:19:22 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 19s+748ms</span>
+	<span class='label start-time'>Oct 1, 2018 11:37:15 AM</span>
+	<span class='label end-time'>Oct 1, 2018 11:39:25 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 9s+151ms</span>
 </div>
 	<div class='test-attributes'>
 			<div class='category-list'>
@@ -185,19 +184,47 @@
 	</div>
 	<ul class='collapsible node-list' data-collapsible='accordion'>
 		
-				<li class='node level-1  fail' status='fail' test-id='2'>
+				<li class='node level-1  pass' status='pass' test-id='2'>
 					<div class='collapsible-header'>
-						<div class='node-name'>Scenario:</div>						
-						<span class='node-time'>Sep 13, 2018 11:18:02 AM</span>
-						<span class='node-duration'>0h 1m 19s+595ms</span>
-						<span class='test-status right fail'>fail</span>
+						<div class='node-name'>Scenario Outline: To validate flight list</div>						
+						<span class='node-time'>Oct 1, 2018 11:37:15 AM</span>
+						<span class='node-duration'>0h 2m 9s+122ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='info'>
+													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+													<td class='timestamp'>11:37:15 AM</td>
+													<td class='step-details'><table><tr><td>Source</td><td>Destination</td><td>Date</td><td>FlightList</td></tr><tr><td>ATL</td><td>MSP</td><td>29 October 2018</td><td>DL1866,DL0950</td></tr></table></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+						<ul class='collapsible node-list' data-collapsible='accordion'>
+				<li class='node level-2  pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Scenario: To validate flight list</div>						
+						<span class='node-time'>Oct 1, 2018 11:37:16 AM</span>
+						<span class='node-duration'>0h 2m 8s+986ms</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 						<ul class='collapsible node-list' data-collapsible='accordion'>
-				<li class='node level-2 leaf pass' status='pass' test-id='3'>
+				<li class='node level-3 leaf pass' status='pass' test-id='4'>
 					<div class='collapsible-header'>
 						<div class='node-name'>Given The User is in Delta homepage</div>						
-						<span class='node-time'>Sep 13, 2018 11:18:12 AM</span>
-						<span class='node-duration'>0h 0m 37s+747ms</span>
+						<span class='node-time'>Oct 1, 2018 11:37:26 AM</span>
+						<span class='node-duration'>0h 0m 30s+958ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -213,7 +240,7 @@
 										<tbody>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:18:50 AM</td>
+													<td class='timestamp'>11:37:57 AM</td>
 													<td class='step-details'>passed</td>
 												</tr>
 										</tbody>
@@ -221,11 +248,11 @@
 								</div>
 						</div>
 				</li>
-				<li class='node level-2 leaf pass' status='pass' test-id='4'>
+				<li class='node level-3 leaf pass' status='pass' test-id='5'>
 					<div class='collapsible-header'>
-						<div class='node-name'>When The user selects source and destination</div>						
-						<span class='node-time'>Sep 13, 2018 11:18:50 AM</span>
-						<span class='node-duration'>0h 0m 8s+315ms</span>
+						<div class='node-name'>And The user naviagates to flight status page</div>						
+						<span class='node-time'>Oct 1, 2018 11:37:57 AM</span>
+						<span class='node-duration'>0h 0m 2s+575ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -239,34 +266,14 @@
 											</tr>
 										</thead>
 										<tbody>
-												<tr class='log' status='info'>
-													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-													<td class='timestamp'>11:18:50 AM</td>
-													<td class='step-details'><table><tr><td>ATL</td><td>MSP</td></tr></table></td>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:38:00 AM</td>
+													<td class='step-details'>[[ChromeDriver: chrome on XP (3e1b91cd6aa6525cfed5ad5afaaf6d97)] -> xpath: //a[contains(@class,'flightstatus')]]element is clicked successfully</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:18:53 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> id: fromAirportName]element is clicked successfully</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:18:55 AM</td>
-													<td class='step-details'>ATL entered into textbox successfully[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> id: search_input]</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:18:57 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> id: toAirportName]element is clicked successfully</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:18:57 AM</td>
-													<td class='step-details'>MSP entered into textbox successfully[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> id: search_input]</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:18:58 AM</td>
+													<td class='timestamp'>11:38:00 AM</td>
 													<td class='step-details'>passed</td>
 												</tr>
 										</tbody>
@@ -274,11 +281,11 @@
 								</div>
 						</div>
 				</li>
-				<li class='node level-2 leaf pass' status='pass' test-id='5'>
+				<li class='node level-3 leaf pass' status='pass' test-id='6'>
 					<div class='collapsible-header'>
-						<div class='node-name'>And The user selects trip type, dates and number of passengers</div>						
-						<span class='node-time'>Sep 13, 2018 11:18:58 AM</span>
-						<span class='node-duration'>0h 0m 4s+497ms</span>
+						<div class='node-name'>When The user search by route for the details "ATL", "MSP" and "29 October 2018"</div>						
+						<span class='node-time'>Oct 1, 2018 11:38:00 AM</span>
+						<span class='node-duration'>0h 0m 38s+783ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
@@ -292,34 +299,49 @@
 											</tr>
 										</thead>
 										<tbody>
-												<tr class='log' status='info'>
-													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-													<td class='timestamp'>11:18:58 AM</td>
-													<td class='step-details'><table><tr><td>Round Trip</td><td>09/25/2018</td><td>09/30/2018</td><td>2</td></tr></table></td>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:38:02 AM</td>
+													<td class='step-details'>[[ChromeDriver: chrome on XP (3e1b91cd6aa6525cfed5ad5afaaf6d97)] -> id: input_departureDate_1]element is clicked successfully</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:19:00 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> xpath: (//span[@class='select-ui-icon icon-Dropdown-caret'])[1]]element is clicked successfully</td>
+													<td class='timestamp'>11:38:03 AM</td>
+													<td class='step-details'>[[ChromeDriver: chrome on XP (3e1b91cd6aa6525cfed5ad5afaaf6d97)] -> xpath: //div//table//tbody//tr//td//a[contains(@data-date,'29 October 2018')]]element is clicked successfully</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:19:01 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> id: input_departureDate_1]element is clicked successfully</td>
+													<td class='timestamp'>11:38:04 AM</td>
+													<td class='step-details'>[[ChromeDriver: chrome on XP (3e1b91cd6aa6525cfed5ad5afaaf6d97)] -> id: departcitylink]element is clicked successfully</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:19:02 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> xpath: //div//table//tbody//tr//td//a[contains(@data-date,'09/25/2018')]]element is clicked successfully</td>
+													<td class='timestamp'>11:38:04 AM</td>
+													<td class='step-details'>ATL entered into textbox successfully[[ChromeDriver: chrome on XP (3e1b91cd6aa6525cfed5ad5afaaf6d97)] -> id: search_input]</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:19:03 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (3f8a36fb3b735ac164fa638048dccae8)] -> xpath: //div//table//tbody//tr//td//a[contains(@data-date,'09/30/2018')]]element is clicked successfully</td>
+													<td class='timestamp'>11:38:21 AM</td>
+													<td class='step-details'>Proxy element for: DefaultElementLocator 'By.className: airport-list'element is clicked successfully</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:19:03 AM</td>
+													<td class='timestamp'>11:38:22 AM</td>
+													<td class='step-details'>[[ChromeDriver: chrome on XP (3e1b91cd6aa6525cfed5ad5afaaf6d97)] -> id: arrivalcitylink]element is clicked successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:38:22 AM</td>
+													<td class='step-details'>MSP entered into textbox successfully[[ChromeDriver: chrome on XP (3e1b91cd6aa6525cfed5ad5afaaf6d97)] -> id: search_input]</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:38:39 AM</td>
+													<td class='step-details'>Proxy element for: DefaultElementLocator 'By.className: airport-list'element is clicked successfully</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:38:39 AM</td>
 													<td class='step-details'>passed</td>
 												</tr>
 										</tbody>
@@ -327,12 +349,12 @@
 								</div>
 						</div>
 				</li>
-				<li class='node level-2 leaf fail' status='fail' test-id='6'>
+				<li class='node level-3 leaf pass' status='pass' test-id='7'>
 					<div class='collapsible-header'>
-						<div class='node-name'>Then The user should see the list of flights</div>						
-						<span class='node-time'>Sep 13, 2018 11:19:03 AM</span>
-						<span class='node-duration'>0h 0m 18s+745ms</span>
-						<span class='test-status right fail'>fail</span>
+						<div class='node-name'>And Click search button</div>						
+						<span class='node-time'>Oct 1, 2018 11:38:39 AM</span>
+						<span class='node-duration'>0h 0m 41s+712ms</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 						<div class='collapsible-body'>
 								<div class='node-steps'>
@@ -345,37 +367,55 @@
 											</tr>
 										</thead>
 										<tbody>
-												<tr class='log' status='info'>
-													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-													<td class='timestamp'>11:19:03 AM</td>
-													<td class='step-details'><table><tr><td>DL 1934</td><td>DL 1574</td><td>DL 888</td><td>DL 1715</td><td>DL 201</td></tr></table></td>
-												</tr>
-												<tr class='log' status='fail'>
-													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-													<td class='timestamp'>11:19:18 AM</td>
-													<td class='step-details'><textarea>java.lang.AssertionError: expected:<[]> but was:<[DL 1934, DL 1574, DL 888, DL 1715, DL 201]>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:743)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at com.stepdefinition.FlightSearchResultsSteps.the_user_should_see_the_list_of_flights(FlightSearchResultsSteps.java:33)
-	at ?.Then The user should see the list of flights(src/test/resources/feature/BookAflight/RoundTrip.feature:11)
-</textarea></td>
-												</tr>
-												<tr class='log' status='fail'>
-													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-													<td class='timestamp'>11:19:18 AM</td>
-													<td class='step-details'>failed</td>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:39:20 AM</td>
+													<td class='step-details'>Proxy element for: DefaultElementLocator 'By.id: btn-flight-sts-submit'element is clicked successfully</td>
 												</tr>
 												<tr class='log' status='pass'>
 													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>11:19:22 AM</td>
+													<td class='timestamp'>11:39:20 AM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-3 leaf pass' status='pass' test-id='8'>
+					<div class='collapsible-header'>
+						<div class='node-name'>Then User validates the list of flights "DL1866,DL0950"</div>						
+						<span class='node-time'>Oct 1, 2018 11:39:20 AM</span>
+						<span class='node-duration'>0h 0m 4s+155ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:39:22 AM</td>
+													<td class='step-details'>passed</td>
+												</tr>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>11:39:25 AM</td>
 													<td class='step-details'>Browser closed successfully</td>
 												</tr>
 										</tbody>
 									</table>
 								</div>
 						</div>
+				</li>
+						</ul>
 				</li>
 						</ul>
 				</li>
@@ -436,13 +476,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>@tag</span>
 						<span class='category-status right'>
-							<span class='label fail'>1</span>
+							<span class='label pass'>2</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 2</span>
 							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -457,9 +497,48 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Sep 13, 2018 11:18:02 AM</td>
-										<td class='linked' test-id='1'>Verify round trip functionality</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Oct 1, 2018 11:37:15 AM</td>
+										<td class='linked' test-id='1'>To list the available flights</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Oct 1, 2018 11:37:16 AM</td>
+										<td class='linked' test-id='3'>To list the available flights.Scenario Outline: To validate flight list.Scenario: To validate flight list</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@tag1</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Oct 1, 2018 11:37:16 AM</td>
+										<td class='linked' test-id='3'>To list the available flights.Scenario Outline: To validate flight list.Scenario: To validate flight list</td>
+										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -478,74 +557,6 @@
 	</div>
 </div>
 <!-- category view -->
-<div id='exception-view' class='view hide'>
-
-    <section id='controls'>
-        <div class='controls grey lighten-4'>
-            <!-- search -->
-            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
-                <a href="#" class='search-div'>
-                    <i class='material-icons'>search</i> Search
-                </a>
-
-                <div class='input-field left hide'>
-                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-                </div>
-
-            </div>
-            <!-- search -->
-        </div>
-    </section>
-
-    <div class='subview-left left'>
-
-        <div class='view-summary'>
-            <h5>Exceptions</h3>
-                <ul id='exception-collection' class='exception-collection'>
-
-                        <li class='exception displayed active'>
-                            <div class='exception-heading'>
-                                <span class='exception-name'>java.lang.AssertionError</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-                            </div>
-                            <div class='exception-content hide'>
-                                <div class='exception-tests'>
-                                    <table class='bordered table-results'>
-                                        <thead>
-                                        <tr>
-                                            <th>Timestamp</th>
-                                            <th>TestName</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                                    <tr>
-                                                        <td>Sep 13, 2018 11:19:03 AM</td>
-                                                        <td class='linked' test-id='6'>Verify round trip functionality.Scenario:.Then The user should see the list of flights</td>
-                                                        <td><pre><textarea>java.lang.AssertionError: expected:<[]> but was:<[DL 1934, DL 1574, DL 888, DL 1715, DL 201]>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:743)
-	at org.junit.Assert.assertEquals(Assert.java:118)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at com.stepdefinition.FlightSearchResultsSteps.the_user_should_see_the_list_of_flights(FlightSearchResultsSteps.java:33)
-	at ?.Then The user should see the list of flights(src/test/resources/feature/BookAflight/RoundTrip.feature:11)
-</textarea></pre></td>
-                                                    </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </li>
-                </ul>
-        </div>
-    </div>
-
-    <div class='subview-right left'>
-        <div class='view-summary'>
-            <h5 class='exception-name'></h5>
-        </div>
-    </div>
-</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -555,31 +566,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>17</div>
+					<div class='panel-lead'>16</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Sep 13, 2018 11:18:02 AM</div>
+					<div class='panel-lead'>Oct 1, 2018 11:37:15 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Sep 13, 2018 11:19:22 AM</div>
+			 		<div class='panel-lead'>Oct 1, 2018 11:39:25 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>80,212ms</div>
+					<div class='panel-lead'>129,599ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -595,8 +606,14 @@
 						</tr>
 						<tr>
 							<td>@tag</td>
+							<td>2</td>
 							<td>0</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>@tag1</td>
 							<td>1</td>
+							<td>0</td>
 							<td>0</td>
 						</tr>
 					</table>
@@ -612,22 +629,22 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 3,
-				failParent: 1,
+				passParent: 5,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
-				passChild: 12,
-				failChild: 2,
+				passChild: 16,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 3,
-				exceptionsChild: 2,
+				infoChild: 0,
+				exceptionsChild: 0,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,
