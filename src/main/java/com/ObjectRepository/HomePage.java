@@ -1,5 +1,7 @@
 package com.ObjectRepository;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -43,6 +45,21 @@ public class HomePage {
 
 	@FindBy(xpath = "//a[contains(@class,'flightstatus')]")
 	private WebElement menuFlighStatus;
+
+	@FindBy(xpath = "(//a[text()='More '])[1]")
+	private WebElement lnk_moreMenu;
+
+	@FindBy(xpath = "//a[contains(@id,'primary-static-link-')]")
+	private List<WebElement> morePrimaryMenu;
+
+	
+	public WebElement getLnk_moreMenu() {
+		return lnk_moreMenu;
+	}
+
+	public List<WebElement> getMorePrimaryMenu() {
+		return morePrimaryMenu;
+	}
 
 	public WebElement getLnk_SourceName() {
 		return lnk_SourceName;

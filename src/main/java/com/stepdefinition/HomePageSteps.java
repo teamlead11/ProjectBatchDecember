@@ -1,10 +1,12 @@
 package com.stepdefinition;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import com.ObjectRepository.HomePage;
@@ -103,4 +105,24 @@ public class HomePageSteps extends FunctionalLibrary {
 		HomePage home = new HomePage();
 		click(home.getLnk_FlightStatus());
 	}
+
+	@When("^The user clicks more menu option$")
+	public void the_user_clicks_more_menu_option() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		HomePage home = new HomePage();
+		click(home.getLnk_moreMenu());
+	}
+
+	@Then("^The user should see the list of menu items$")
+	public void the_user_should_see_the_list_of_menu_items(DataTable menuList) throws Throwable {
+		List<String> listMenuItems = menuList.asList(String.class);
+		HomePage home = new HomePage();
+		List<WebElement> menuElements = home.getMorePrimaryMenu();
+		List<String> actualMenuList = new ArrayList<String>();
+		for (WebElement menuElement : menuElements) {
+			actualMenuList.add(menuElement.getText());
+		}
+		Assert.assertEquals(listMenuItems, actualMenuList);
+	}
+
 }
