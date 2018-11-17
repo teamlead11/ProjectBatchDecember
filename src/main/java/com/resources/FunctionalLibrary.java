@@ -901,29 +901,6 @@ public class FunctionalLibrary {
 		return flag;
 	}
 
-	public RequestSpecification getRequestSpecification() {
-		RequestSpecification reqSpecification = RestAssured.given().contentType(ContentType.JSON)
-				.pathParam("chains", "1").pathParam("hotels", "15222");
-		int status = reqSpecification.when().get("/chains/{chains}/hotels/{hotels}/inventory/oooCodes").getStatusCode();
-		if (status == 200) {
-			Reporter.addStepLogPass("successfully accessed the webservice");
-		} else {
-			Reporter.addStepLogError("can not accessed the webservice");
-		}
-		return reqSpecification;
-	}
-
-	public Response getResponse(String URI) {
-		Response response = getRequestSpecification().get(URI);
-		return response;
-	}
-
-	public RequestSpecification postRequest(String field, String fieldValue, JSONObject createOooCodesjsonBody) {
-		RequestSpecification requestSpecification = getRequestSpecification();
-		given().body(createOooCodesjsonBody).when().contentType("application/json")
-				.post("/chains/{chains}/hotels/{hotels}/inventory/oooCode", 1, 15222);
-		System.out.println("verify" + requestSpecification.toString());
-		return requestSpecification;
-	}
+	
 
 }

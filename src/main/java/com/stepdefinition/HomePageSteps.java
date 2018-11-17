@@ -67,7 +67,7 @@ public class HomePageSteps extends FunctionalLibrary {
 	public void the_user_clicks_submit_button() throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		HomePage home = new HomePage();
-		click(home.getBtn_Submit());
+		click(home.getBtn_submit());
 	}
 
 	@When("^The user selects source and destination$")
@@ -96,7 +96,7 @@ public class HomePageSteps extends FunctionalLibrary {
 		home.SelectDateFromWebCalendar(tripList.get(2));
 		click(home.getDrp_PassengerCountDownArrow());
 		home.SelectByText(tripList.get(3));
-		click(home.getBtn_Submit());
+		click(home.getBtn_submit());
 
 	}
 
@@ -125,4 +125,20 @@ public class HomePageSteps extends FunctionalLibrary {
 		Assert.assertEquals(listMenuItems, actualMenuList);
 	}
 
+	@Given("^The user navigates to flight status page$")
+	public void the_user_navigates_to_flight_status_page() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		HomePage home = new HomePage();
+		click(home.getLnk_FlightStatus());
+	}
+
+	@When("^The user enters flight number \"([^\"]*)\" and date \"([^\"]*)\"$")
+	public void the_user_enters_flight_number_and_date(String flightNum, String date) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		HomePage home = new HomePage();
+		click(home.getCal_departureDate());
+		home.SelectDateFromWebCalendar(date);
+		setText(home.getTxt_flightNumber(), flightNum);
+		click(home.getBtn_submit());
+	}
 }

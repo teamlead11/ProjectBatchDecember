@@ -28,8 +28,8 @@ public class HomePage {
 	@FindBy(id = "selectTripType-val")
 	private WebElement DropDown_TripType;
 
-	@FindBy(id = "btn-book-submit")
-	private WebElement Btn_Submit;
+	// @FindBy(id = "btn-book-submit")
+	// private WebElement Btn_Submit;
 
 	@FindBy(id = "input_departureDate_1")
 	private WebElement Btn_Depart;
@@ -52,7 +52,27 @@ public class HomePage {
 	@FindBy(xpath = "//a[contains(@id,'primary-static-link-')]")
 	private List<WebElement> morePrimaryMenu;
 
-	
+	@FindBy(id = "flightNo")
+	private WebElement txt_flightNumber;
+
+	@FindBy(id = "input_departureDate_1")
+	private WebElement cal_departureDate;
+
+	@FindBy(id = "btn-flight-sts-submit")
+	private WebElement Btn_submit;
+
+	public WebElement getTxt_flightNumber() {
+		return txt_flightNumber;
+	}
+
+	public WebElement getCal_departureDate() {
+		return cal_departureDate;
+	}
+
+	public WebElement getBtn_submit() {
+		return Btn_submit;
+	}
+
 	public WebElement getLnk_moreMenu() {
 		return lnk_moreMenu;
 	}
@@ -97,9 +117,7 @@ public class HomePage {
 		return DropDown_TripType;
 	}
 
-	public WebElement getBtn_Submit() {
-		return Btn_Submit;
-	}
+	
 
 	public void SelectDateFromWebCalendar(String date) {
 
