@@ -12,8 +12,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/feature/FlightStatus/SingleFlightValidation.feature", glue = { "com.stepdefinition" }, plugin = {
-		"com.resources.ExtentCucumberFormatter:" }, dryRun = false, monochrome = true)
+@CucumberOptions(features = "src/test/resources/feature/UserRegistration/userRegistrationFieldValidation.feature", glue = {
+		"com.stepdefinition" }, plugin = {
+				"com.resources.ExtentCucumberFormatter:" }, dryRun = true, monochrome = true)
 
 public class TestRunner {
 
@@ -27,7 +28,8 @@ public class TestRunner {
 		int minute = now.getMinuteOfHour();
 		int second = now.getSecondOfMinute();
 		String snewFilename1 = year + "_" + month + "_" + day + "_" + hour + "_" + minute + "_" + second;
-		String filePath = System.getProperty("user.dir") + "/src/main/resources/AutomationSuite/index" + ".html";
+		String filePath = System.getProperty("user.dir") + "/src/main/resources/AutomationSuite/Report_" + snewFilename1
+				+ ".html";
 		File file = new File(filePath);
 		ExtentCucumberFormatter.setExtentHtmlReport(file);
 	}

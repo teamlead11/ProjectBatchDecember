@@ -61,6 +61,14 @@ public class HomePage {
 	@FindBy(id = "btn-flight-sts-submit")
 	private WebElement Btn_submit;
 
+	@FindBy(xpath = "(//a[text()='Sign Up'])[1]")
+	private WebElement lnk_signup;
+	
+
+	public WebElement getLnk_signup() {
+		return lnk_signup;
+	}
+
 	public WebElement getTxt_flightNumber() {
 		return txt_flightNumber;
 	}
@@ -116,8 +124,6 @@ public class HomePage {
 	public WebElement getDropDown_TripType() {
 		return DropDown_TripType;
 	}
-
-	
 
 	public void SelectDateFromWebCalendar(String date) {
 
