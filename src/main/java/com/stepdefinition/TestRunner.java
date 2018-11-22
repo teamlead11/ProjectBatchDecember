@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature/FlightStatus/SingleFlightValidation.feature", glue = {
 		"com.stepdefinition" }, plugin = {
-				"com.resources.ExtentCucumberFormatter:" }, dryRun = true, monochrome = true)
+				"com.resources.ExtentCucumberFormatter:" }, dryRun = false, monochrome = true)
 
 public class TestRunner {
 
