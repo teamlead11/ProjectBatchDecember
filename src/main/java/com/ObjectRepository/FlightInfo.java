@@ -9,24 +9,23 @@ import com.resources.FunctionalLibrary;
 public class FlightInfo {
 
 	public FlightInfo() {
-		
+
 		PageFactory.initElements(FunctionalLibrary.driver, this);
 
 	}
 
-	@FindBy (id="departcitylink")
+	@FindBy(id = "departcitylink")
 	private WebElement departcitylink;
-	
-	@FindBy(id="arrivalcitylink")
+
+	@FindBy(id = "arrivalcitylink")
 	private WebElement arrivalcitylink;
-	
-	@FindBy(id="search_input")
+
+	@FindBy(id = "search_input")
 	private WebElement txt_SearchInput;
-	
-	@FindBy(className="airport-list")
+
+	@FindBy(className = "airport-list")
 	private WebElement airportList;
-	
-	
+
 	@FindBy(xpath = "//img[@id='ctryIcon']")
 	private WebElement routeDownArrow;
 
@@ -48,11 +47,9 @@ public class FlightInfo {
 	@FindBy(id = "input_departureDate_1")
 	private WebElement depatureDateIcon;
 
-
 	@FindBy(id = "btn-flight-sts-submit")
 	private WebElement flightSubmitButton;
 
-	
 	public WebElement getDepartCityIcon() {
 		return departcitylink;
 	}
@@ -96,7 +93,6 @@ public class FlightInfo {
 	public WebElement getDepatureDateIcon() {
 		return depatureDateIcon;
 	}
-
 
 	public WebElement getFlightSubmitButton() {
 		return flightSubmitButton;

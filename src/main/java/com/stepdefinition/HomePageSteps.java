@@ -145,5 +145,7 @@ public class HomePageSteps extends FunctionalLibrary {
 	@Given("^The user navigates to enrollment page$")
 	public void the_user_navigates_to_enrollment_page() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
+		HomePage home = new HomePage();
+		click(home.getLnk_signup());
 	}
 }

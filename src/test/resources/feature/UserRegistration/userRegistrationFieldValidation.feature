@@ -8,4 +8,4 @@ Feature: Field validation for user registration page
     And The user navigates to enrollment page
     When The user selects the adress type dropdown
     Then The user should see the options
-      | Home | Bussiness | Other |
+      | Home | Business | Other |Select One|

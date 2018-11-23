@@ -1,5 +1,7 @@
 package com.ObjectRepository;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,9 +14,9 @@ public class EnrollPage {
 	private WebElement drpdwn_adressType;
 
 	@FindBy(xpath = "//ul[@id='aType-1-menu']/li[@role='option']")
-	private WebElement drpDwn_adressType_options;
+	private List<WebElement> drpDwn_adressType_options;
 
-	public WebElement getDrpDwn_adressType_options() {
+	public List<WebElement> getDrpDwn_adressType_options() {
 		return drpDwn_adressType_options;
 	}
 
@@ -22,7 +24,7 @@ public class EnrollPage {
 		return drpdwn_adressType;
 	}
 
-	EnrollPage() {
+	public EnrollPage() {
 		PageFactory.initElements(FunctionalLibrary.driver, this);
 	}
 }
