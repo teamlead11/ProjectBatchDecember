@@ -28,13 +28,13 @@ public class HomePage {
 	@FindBy(id = "selectTripType-val")
 	private WebElement DropDown_TripType;
 
-	// @FindBy(id = "btn-book-submit")
-	// private WebElement Btn_Submit;
+	@FindBy(id = "btn-book-submit")
+	private WebElement Btn_bookSubmit;
 
 	@FindBy(id = "input_departureDate_1")
 	private WebElement Btn_Depart;
 
-	@FindBy(xpath = "//li[@class='airport-list']")
+	@FindBy(xpath = "(//li[@class='airport-list ng-star-inserted'])[1]")
 	private WebElement List_Airport;
 
 	@FindBy(xpath = "(//span[@class='select-ui-icon icon-Dropdown-caret'])[1]")
@@ -63,7 +63,16 @@ public class HomePage {
 
 	@FindBy(xpath = "(//a[text()='Sign Up'])[1]")
 	private WebElement lnk_signup;
-	
+
+	@FindBy(xpath = "//a[text()='BOOK' and @role='menuitem'] ")
+	private WebElement menu_book;
+
+	@FindBy(id = "input_returnDate_1")
+	private WebElement cal_departDate;
+
+	public WebElement getMenu_book() {
+		return menu_book;
+	}
 
 	public WebElement getLnk_signup() {
 		return lnk_signup;
@@ -123,6 +132,14 @@ public class HomePage {
 
 	public WebElement getDropDown_TripType() {
 		return DropDown_TripType;
+	}
+
+	public WebElement getBtn_bookSubmit() {
+		return Btn_bookSubmit;
+	}
+
+	public WebElement getCal_departDate() {
+		return cal_departDate;
 	}
 
 	public void SelectDateFromWebCalendar(String date) {

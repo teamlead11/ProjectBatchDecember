@@ -10,7 +10,10 @@ public class DeltaCom extends FunctionalLibrary {
 	@FindBy(id = "book-delta-vacations-content-trigger")
 	private WebElement btnVacation;
 
+	private static String name;
+
 	public WebElement getbtnVacation() {
+		System.out.println("element retrived");
 		return btnVacation;
 	}
 

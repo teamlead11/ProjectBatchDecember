@@ -76,6 +76,7 @@ public class Reporter {
     }
     
     public static void addStepLogPass(String iMessage) {
+    	System.out.println(getCurrentStep()+"step");
     	getCurrentStep().pass(iMessage);
     }
     
@@ -171,6 +172,7 @@ public class Reporter {
     }
 
     private static ExtentTest getCurrentStep() {
+    	System.out.println(ExtentCucumberFormatter.stepTestThreadLocal.get());
         return ExtentCucumberFormatter.stepTestThreadLocal.get();
     }
 
