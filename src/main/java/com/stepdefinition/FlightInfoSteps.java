@@ -1,5 +1,7 @@
 package com.stepdefinition;
 
+import org.openqa.selenium.NoAlertPresentException;
+
 import com.ObjectRepository.FlightInfo;
 import com.ObjectRepository.HomePage;
 import com.resources.FunctionalLibrary;
@@ -22,6 +24,7 @@ public class FlightInfoSteps extends FunctionalLibrary {
 		click(flightinfo.getArrivalCityIcon());
 		setText(flightinfo.getTxt_SearchInput(), destination);
 		click(flightinfo.getAirportList());
+		
 	}
 
 	@When("^Click search button$")

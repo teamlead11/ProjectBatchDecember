@@ -14,7 +14,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature/BookAflight/OneWaySearchResults.feature", glue = {
 		"com.stepdefinition" }, plugin = {
-				"com.resources.ExtentCucumberFormatter:" }, dryRun = false, monochrome = true)
+				"com.resources.ExtentCucumberFormatter:" ,"json:src/main/resources/AutomationSuite/jsonReport.json"}, dryRun = false, monochrome = true)
 
 public class TestRunner {
 
