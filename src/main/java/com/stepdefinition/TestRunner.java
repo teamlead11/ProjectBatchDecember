@@ -12,7 +12,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/feature/BookAflight/OneWaySearchResults.feature", glue = {
+@CucumberOptions(features = "src/test/resources/feature", glue = {
 		"com.stepdefinition" }, plugin = {
 				"com.resources.ExtentCucumberFormatter:" ,"json:src/main/resources/AutomationSuite/jsonReport.json"}, dryRun = false, monochrome = true)
 
