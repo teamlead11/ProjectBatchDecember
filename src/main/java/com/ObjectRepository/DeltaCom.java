@@ -18,7 +18,7 @@ public class DeltaCom extends FunctionalLibrary {
 	}
 
 	public DeltaCom() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(FunctionalLibrary.driver, this);
 
 	}
 

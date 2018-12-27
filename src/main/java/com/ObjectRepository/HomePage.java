@@ -70,6 +70,21 @@ public class HomePage {
 	@FindBy(id = "input_returnDate_1")
 	private WebElement cal_departDate;
 
+	@FindBy(xpath ="(//a[contains(@class,'static-link-more')])[1]")
+	private WebElement menu_More;
+	
+	@FindBy(xpath="//a[text()='Rent a Car']")
+	private WebElement menu_RentACar;
+	
+	
+	public WebElement getMenu_More() {
+		return menu_More;
+	}
+
+	public WebElement getMenu_RentACar() {
+		return menu_RentACar;
+	}
+
 	public WebElement getMenu_book() {
 		return menu_book;
 	}
