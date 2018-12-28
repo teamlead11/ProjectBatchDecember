@@ -188,13 +188,20 @@ public class HomePageSteps extends FunctionalLibrary {
 		HomePage home = new HomePage();
 		click(home.getBtn_bookSubmit());
 	}
-	
+
 	@Given("^The user navigates to rent a car page$")
 	public void the_user_navigates_to_rent_a_car_page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+		// Write code here that turns the phrase above into concrete actions
 		HomePage home = new HomePage();
 		click(home.getMenu_More());
 		click(home.getMenu_RentACar());
 	}
 
+	@Given("^user navigate to search for a hotel$")
+	public void user_navigate_to_search_for_a_hotel() throws Throwable {
+		HomePage home = new HomePage();
+		click(home.getMenu_More());
+		click(home.getMenu_ShopHotel());
+	}
 }
+	

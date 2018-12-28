@@ -12,7 +12,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/feature/RentACar/RentACar.feature", glue = {
+@CucumberOptions(features = "src/test/resources/feature\\SearchForHotel\\SearchForHotel.feature", glue = {
 		"com.stepdefinition" }, plugin = {
 				"com.resources.ExtentCucumberFormatter:" ,"json:src/main/resources/AutomationSuite/jsonReport.json","html:target"}, dryRun = false, monochrome = true)
 
