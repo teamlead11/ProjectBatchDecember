@@ -3,7 +3,7 @@
     "comments": [
       {
         "line": 1,
-        "value": "#Author: Greens"
+        "value": "#Author: your.email@your.domain.com"
       }
     ],
     "line": 3,
@@ -12,7 +12,7 @@
         "before": [
           {
             "result": {
-              "duration": 11729296556,
+              "duration": 6832088913,
               "status": "passed"
             },
             "match": {
@@ -21,13 +21,13 @@
           }
         ],
         "line": 6,
-        "name": "To test the error message when the user clicks book a car with empty fields",
+        "name": "To test the error message when the user clicks book a hotel and earn miles with empty fields",
         "description": "",
-        "id": "to-test-rent-a-car-functionality;to-test-the-error-message-when-the-user-clicks-book-a-car-with-empty-fields",
+        "id": "to-test-search-a-hotel-functionality;to-test-the-error-message-when-the-user-clicks-book-a-hotel-and-earn-miles-with-empty-fields",
         "after": [
           {
             "result": {
-              "duration": 1004999743,
+              "duration": 978445293,
               "status": "passed"
             },
             "match": {
@@ -40,7 +40,7 @@
         "steps": [
           {
             "result": {
-              "duration": 27807348898,
+              "duration": 41773239397,
               "status": "passed"
             },
             "line": 7,
@@ -52,42 +52,44 @@
           },
           {
             "result": {
-              "duration": 30060481431,
+              "duration": 23948380481,
               "status": "passed"
             },
             "line": 8,
-            "name": "The user navigates to rent a car page",
+            "name": "user navigate to search for a hotel",
             "match": {
-              "location": "HomePageSteps.the_user_navigates_to_rent_a_car_page()"
+              "location": "HomePageSteps.user_navigate_to_search_for_a_hotel()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1413356323,
+              "duration": 1123159553,
               "status": "passed"
             },
             "line": 9,
-            "name": "The user clicks the book a car buton",
+            "name": "user click submit button without entering informations",
             "match": {
-              "location": "SearchCarActionSteps.the_user_clicks_the_book_a_car_buton()"
+              "location": "SearchHotelActionSteps.user_click_submit_button_without_entering_informations()"
             },
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 235429843,
+              "duration": 458009050,
               "status": "passed"
             },
             "line": 10,
-            "name": "The user should see the error messages",
+            "name": "user should see tbe error message",
             "match": {
-              "location": "SearchCarActionSteps.the_user_should_see_the_error_messages(DataTable)"
+              "location": "SearchHotelActionSteps.user_should_see_tbe_error_message(DataTable)"
             },
             "rows": [
               {
                 "cells": [
-                  "correct the 3 items indicated."
+                  "*WHERE ARE YOU GOING?",
+                  "*CHECK-IN",
+                  "*CHECK-OUT"
                 ],
                 "line": 11
               }
@@ -98,20 +100,20 @@
         "tags": [
           {
             "line": 5,
-            "name": "@tag1"
+            "name": "@error"
           }
         ]
       }
     ],
-    "name": "To test rent a car functionality",
+    "name": "To test search a hotel functionality",
     "description": "",
-    "id": "to-test-rent-a-car-functionality",
+    "id": "to-test-search-a-hotel-functionality",
     "keyword": "Feature",
-    "uri": "src/test/resources/feature/RentACar/RentACar.feature",
+    "uri": "src/test/resources/feature/SearchForHotel/SearchForHotel.feature",
     "tags": [
       {
         "line": 2,
-        "name": "@tag"
+        "name": "@hotels"
       }
     ]
   }
