@@ -3,7 +3,7 @@
     "comments": [
       {
         "line": 1,
-        "value": "#Author: Greens"
+        "value": "#Author: your.email@your.domain.com"
       }
     ],
     "line": 3,
@@ -12,7 +12,7 @@
         "before": [
           {
             "result": {
-              "duration": 11729296556,
+              "duration": 4924814443,
               "status": "passed"
             },
             "match": {
@@ -21,26 +21,15 @@
           }
         ],
         "line": 6,
-        "name": "To test the error message when the user clicks book a car with empty fields",
+        "name": "To verify flight details in one way search results",
         "description": "",
-        "id": "to-test-rent-a-car-functionality;to-test-the-error-message-when-the-user-clicks-book-a-car-with-empty-fields",
-        "after": [
-          {
-            "result": {
-              "duration": 1004999743,
-              "status": "passed"
-            },
-            "match": {
-              "location": "BaseClass.afterScenario()"
-            }
-          }
-        ],
+        "id": "to-verify-flight-details-in-search-results;to-verify-flight-details-in-one-way-search-results",
         "type": "scenario",
         "keyword": "Scenario",
         "steps": [
           {
             "result": {
-              "duration": 27807348898,
+              "duration": 9263186429,
               "status": "passed"
             },
             "line": 7,
@@ -52,46 +41,62 @@
           },
           {
             "result": {
-              "duration": 30060481431,
+              "duration": 30294688678,
               "status": "passed"
             },
             "line": 8,
-            "name": "The user navigates to rent a car page",
+            "name": "The user selects book menu option",
             "match": {
-              "location": "HomePageSteps.the_user_navigates_to_rent_a_car_page()"
+              "location": "HomePageSteps.the_user_selects_book_menu_option()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1413356323,
+              "duration": 4897116925,
               "status": "passed"
             },
             "line": 9,
-            "name": "The user clicks the book a car buton",
+            "name": "The user fill in the details",
             "match": {
-              "location": "SearchCarActionSteps.the_user_clicks_the_book_a_car_buton()"
-            },
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 235429843,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "The user should see the error messages",
-            "match": {
-              "location": "SearchCarActionSteps.the_user_should_see_the_error_messages(DataTable)"
+              "location": "HomePageSteps.the_user_fill_in_the_details(DataTable)"
             },
             "rows": [
               {
                 "cells": [
-                  "correct the 3 items indicated."
+                  "ATL",
+                  "MSP",
+                  "One Way",
+                  "01/30/2019",
+                  "1 Passenger"
                 ],
-                "line": 11
+                "line": 10
               }
             ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 432326911,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "The user clicks the submit button",
+            "match": {
+              "location": "HomePageSteps.the_user_clicks_the_submit_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 21405031,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "The user verifies the search results details",
+            "match": {
+              "location": "FlightSearchResultsSteps.the_user_verifies_the_search_results_details()"
+            },
             "keyword": "Then "
           }
         ],
@@ -103,11 +108,11 @@
         ]
       }
     ],
-    "name": "To test rent a car functionality",
+    "name": "To verify flight details in search results",
     "description": "",
-    "id": "to-test-rent-a-car-functionality",
+    "id": "to-verify-flight-details-in-search-results",
     "keyword": "Feature",
-    "uri": "src/test/resources/feature/RentACar/RentACar.feature",
+    "uri": "src/test/resources/feature/BookAflight/OneWaySearchResults.feature",
     "tags": [
       {
         "line": 2,

@@ -7,6 +7,7 @@ Feature: Book A flight oneway
     Given The User is in Delta homepage
     When The user enters source and destination
       | ATL | MSP |
-    And The user selct date from Web calendar "10/09/2018" ,"10/15/2018"
+    And The user select oneway trip
+    And The user select date from Web calendar "12/29/2018"
     And The user clicks submit button
     Then The user should be in search results page

@@ -1,6 +1,5 @@
 package com.resources;
 
-import java.text.*;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -10,6 +9,8 @@ import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -23,10 +24,10 @@ import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
-import org.json.simple.JSONObject;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -40,15 +41,6 @@ import org.openqa.selenium.security.UserAndPassword;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-
-import org.openqa.selenium.Keys;
-
-import static io.restassured.RestAssured.given;
 
 public class FunctionalLibrary {
 	public static WebDriver driver;
@@ -330,13 +322,13 @@ public class FunctionalLibrary {
 	/**
 	 * Method to select the option from drop down by visible text
 	 */
-	public static void selectByText(WebElement element, String text) {
+	public static void selectByText(WebElement element, String i) {
 		try {
 			Select obj_select = new Select(element);
-			obj_select.selectByVisibleText(text);
-			Reporter.addStepLogPass(text + "selected from dropdown " + element.toString());
+			obj_select.selectByVisibleText(i);
+			Reporter.addStepLogPass(i + "selected from dropdown " + element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("failed to select" + text + "from " + element.toString());
+			Reporter.addStepLogInfo("failed to select" + i + "from " + element.toString());
 		}
 	}
 

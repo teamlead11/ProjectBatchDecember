@@ -2,12 +2,10 @@ package com.stepdefinition;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 
 import com.ObjectRepository.HomePage;
 import com.resources.FunctionalLibrary;
@@ -24,54 +22,53 @@ public class HomePageSteps extends FunctionalLibrary {
 		driver.get("https://www.delta.com/");
 	}
 
-	// @When("^The user enters source and destination$")
-	// public void the_user_enters_source_and_destination(DataTable
-	// TravelDetails) throws Throwable {
-	// List<String> myList = TravelDetails.asList(String.class);
-	// HomePage home = new HomePage();
-	// click(home.getLnk_SourceName());
-	// setText(home.getTxt_txt_SearchInputName(), myList.get(0));
-	// waitForElementVisibility(home.getEle_AiportList());
-	// home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
-	// click(home.getLnk_DestName());
-	// setText(home.getTxt_txt_SearchInputName(), myList.get(1));
-	// waitForElementVisibility(home.getEle_AiportList());
-	// home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
-	//
-	// }
+	@When("^The user enters source and destination$")
+	public void the_user_enters_source_and_destination(DataTable TravelDetails) throws Throwable {
+		List<String> myList = TravelDetails.asList(String.class);
+		HomePage home = new HomePage();
+		click(home.getLnk_SourceName());
+		setText(home.getTxt_txt_SearchInputName(), myList.get(0));
+		waitForElementVisibility(home.getEle_AiportList());
+		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
+		click(home.getLnk_DestName());
+		setText(home.getTxt_txt_SearchInputName(), myList.get(1));
+		waitForElementVisibility(home.getEle_AiportList());
+		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
 
-	// @When("^The user select oneway trip$")
-	// public void the_user_select_oneway_trip() throws Throwable {
-	// // Write code here that turns the phrase above into concrete actions
-	//
-	// // selectByValue((home.getDropDown_TripType(),);
-	// }
+	}
 
-	@When("^The user selct date from Web calendar \"([^\"]*)\"$")
+	@When("^The user select oneway trip$")
+	public void the_user_select_oneway_trip() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		HomePage home = new HomePage();
+		click(home.getDropDown_TriptypeSelect());
+		click(home.getDropDown_TripType());
+	}
+
+	@When("^The user select date from Web calendar \"([^\"]*)\"$")
 	public void the_user_selct_date_from_Web_calendar(String date) throws Throwable {
 		// Write code here that turns the phrase above into concrete actions
 		HomePage home = new HomePage();
 		click(home.getBtn_Depart());
 		home.SelectDateFromWebCalendar(date);
+		click(home.getSelect_Date_Done());
 	}
 
-	// @When("^The user selct date from Web calendar \"([^\"]*)\"
-	// ,\"([^\"]*)\"$")
-	// public void the_user_selct_date_from_Web_calendar(String depDate, String
-	// RetDate) throws Throwable {
-	// // Write code here that turns the phrase above into concrete actions
-	// HomePage home = new HomePage();
-	// click(home.getBtn_Depart());
-	// home.SelectDateFromWebCalendar(depDate);
-	// home.SelectDateFromWebCalendar(RetDate);
-	// }
+	@When("^The user select date from Web calendar \"([^\"]*)\",\"([^\"]*)\"$")
+	public void the_user_selct_date_from_Web_calendar(String depDate, String RetDate) throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+		HomePage home = new HomePage();
+		click(home.getBtn_Depart());
+		home.SelectDateFromWebCalendar(depDate);
+		home.SelectDateFromWebCalendar(RetDate);
+	}
 
-	// @When("^The user clicks submit button$")
-	// public void the_user_clicks_submit_button() throws Throwable {
-	// // Write code here that turns the phrase above into concrete actions
-	// HomePage home = new HomePage();
-	// click(home.getBtn_submit());
-	// }
+	@When("^The user clicks submit button$")
+	public void the_user_clicks_submit_button() throws Throwable {
+		// // Write code here that turns the phrase above into concrete actions
+		HomePage home = new HomePage();
+		click(home.getBtn_submit());
+	}
 
 	@When("^The user selects source and destination$")
 	public void the_user_selects_source_and_destination(DataTable Traveldetails) throws Throwable {
@@ -85,7 +82,7 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getLnk_DestName());
 		setText(home.getTxt_txt_SearchInputName(), tripList.get(1));
 		waitForElementVisibility(home.getEle_AiportList());
-		home.getTxt_txt_SearchInputName().sendKeys("Hi", "");
+		home.getTxt_txt_SearchInputName().sendKeys(Keys.ENTER);
 	}
 
 	@When("^The user selects trip type, dates and number of passengers$")
@@ -188,10 +185,10 @@ public class HomePageSteps extends FunctionalLibrary {
 		HomePage home = new HomePage();
 		click(home.getBtn_bookSubmit());
 	}
-	
+
 	@Given("^The user navigates to rent a car page$")
 	public void the_user_navigates_to_rent_a_car_page() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
+		// Write code here that turns the phrase above into concrete actions
 		HomePage home = new HomePage();
 		click(home.getMenu_More());
 		click(home.getMenu_RentACar());
