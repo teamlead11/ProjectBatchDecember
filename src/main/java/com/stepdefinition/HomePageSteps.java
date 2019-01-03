@@ -194,4 +194,11 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getMenu_RentACar());
 	}
 
+	@Given("^user navigate to search for a hotel$")
+	public void user_navigate_to_search_for_a_hotel() throws Throwable {
+		HomePage home = new HomePage();
+		click(home.getMenu_More());
+		click(home.getMenu_ShopHotel());
+	}
 }
+	

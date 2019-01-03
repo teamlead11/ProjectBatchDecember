@@ -38,8 +38,10 @@ public class FlightSearchResultsSteps extends FunctionalLibrary {
 	}
 	@Then("^The user verifies the search results details$")
 	public void the_user_verifies_the_search_results_details() {
+		FlightSearchResultsPage flightse = new FlightSearchResultsPage();
 		
-		 Assert.assertEquals("Airline Tickets & Flights: Book Direct with Delta Air Lines - Official Site", driver.getTitle());
+		 Assert.assertEquals("Atlanta, GA to Minneapolis/St Paul, MN",flightse.getFlightsearchresult());
+		 
 			
 
 		

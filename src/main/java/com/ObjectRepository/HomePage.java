@@ -85,6 +85,13 @@ public class HomePage {
 
 	@FindBy(xpath = "//a[text()='Rent a Car']")
 	private WebElement menu_RentACar;
+	
+	@FindBy(xpath="//a[text()='Shop Hotels']")
+	private WebElement menu_ShopHotel;
+	
+	public WebElement getMenu_ShopHotel() {
+		return menu_ShopHotel;
+	}
 
 	public WebElement getMenu_More() {
 		return menu_More;
