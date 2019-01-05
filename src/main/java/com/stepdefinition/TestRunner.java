@@ -1,23 +1,17 @@
 package com.stepdefinition;
 
 import java.io.File;
-
 import org.joda.time.LocalDateTime;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-
 import com.resources.ExtentCucumberFormatter;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/feature/BookAHotel/BookAHotel.feature", glue = {
-		"com.stepdefinition" }, plugin = {
-				"com.resources.ExtentCucumberFormatter:" ,"json:src/main/resources/AutomationSuite/jsonReport.json","html:target"}, dryRun = false, monochrome = true)
+@CucumberOptions(features = "src/test/resources/feature/BookAflight", glue = {"com.stepdefinition" }, plugin = {"com.resources.ExtentCucumberFormatter:" ,"json:src/main/resources/AutomationSuite/jsonReport.json","html:target"}, dryRun = false, monochrome = true)
 
 public class TestRunner {
-
 	@BeforeClass
 	public static void beforeClass() {
 		LocalDateTime now = LocalDateTime.now();

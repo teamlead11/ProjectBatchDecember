@@ -16,8 +16,15 @@ public class HomePage {
 
 	}
 
+	@FindBy(xpath = "//button[@class='donebutton']")
+	private WebElement Select_Date_Done;
+
 	@FindBy(id = "fromAirportName")
 	private WebElement lnk_SourceName;
+
+	public WebElement getSelect_Date_Done() {
+		return Select_Date_Done;
+	}
 
 	@FindBy(id = "search_input")
 	private WebElement txt_SearchInputName;
@@ -25,13 +32,16 @@ public class HomePage {
 	@FindBy(id = "toAirportName")
 	private WebElement lnk_DestName;
 
-	@FindBy(id = "selectTripType-val")
+	@FindBy(id = "ui-list-selectTripType1")
 	private WebElement DropDown_TripType;
+
+	@FindBy(xpath = "(//span[@class='select-ui-icon icon-Dropdown-caret'])[1]")
+	private WebElement DropDown_TriptypeSelect;
 
 	@FindBy(id = "btn-book-submit")
 	private WebElement Btn_bookSubmit;
 
-	@FindBy(id = "input_departureDate_1")
+	@FindBy(id = "calDepartLabelCont")
 	private WebElement Btn_Depart;
 
 	@FindBy(xpath = "(//li[@class='airport-list ng-star-inserted'])[1]")
@@ -58,7 +68,7 @@ public class HomePage {
 	@FindBy(id = "input_departureDate_1")
 	private WebElement cal_departureDate;
 
-	@FindBy(id = "btn-flight-sts-submit")
+	@FindBy(id = "btn-book-submit")
 	private WebElement Btn_submit;
 
 	@FindBy(xpath = "(//a[text()='Sign Up'])[1]")
@@ -70,10 +80,10 @@ public class HomePage {
 	@FindBy(id = "input_returnDate_1")
 	private WebElement cal_departDate;
 
-	@FindBy(xpath ="(//a[contains(@class,'static-link-more')])[1]")
+	@FindBy(xpath = "(//a[contains(@class,'static-link-more')])[1]")
 	private WebElement menu_More;
-	
-	@FindBy(xpath="//a[text()='Rent a Car']")
+
+	@FindBy(xpath = "//a[text()='Rent a Car']")
 	private WebElement menu_RentACar;
 	
 	@FindBy(xpath="//a[text()='Shop Hotels']")
@@ -85,6 +95,10 @@ public class HomePage {
 
 	public WebElement getMenu_More() {
 		return menu_More;
+	}
+	
+	public WebElement getDropDown_TriptypeSelect() {
+		return DropDown_TriptypeSelect;
 	}
 
 	public WebElement getMenu_RentACar() {
