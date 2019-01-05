@@ -256,15 +256,15 @@ public class FunctionalLibrary {
 	/**
 	 * Method to click the element
 	 * 
-	 * @param element
+	 * @param object
 	 */
-	public static void click(WebElement element) {
+	public static void click(Object object) {
 		try {
-			element.click();
-			Reporter.addStepLogPass(element.toString() + "element is clicked successfully");
+			((WebElement) object).click();
+			Reporter.addStepLogPass(object.toString() + "element is clicked successfully");
 
 		} catch (Exception e) {
-			Reporter.addStepLogInfo(element.toString() + "element is not clicked" + e.getMessage());
+			Reporter.addStepLogInfo(object.toString() + "element is not clicked" + e.getMessage());
 		}
 	}
 
