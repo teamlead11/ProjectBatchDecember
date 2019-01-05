@@ -12,7 +12,7 @@
         "before": [
           {
             "result": {
-              "duration": 6832088913,
+              "duration": 5023441265,
               "status": "passed"
             },
             "match": {
@@ -20,14 +20,14 @@
             }
           }
         ],
-        "line": 6,
-        "name": "To test the error message when the user clicks book a hotel and earn miles with empty fields",
+        "line": 15,
+        "name": "The user Shoping a Hotel",
         "description": "",
-        "id": "to-test-search-a-hotel-functionality;to-test-the-error-message-when-the-user-clicks-book-a-hotel-and-earn-miles-with-empty-fields",
+        "id": "shoping-a-hotel;the-user-shoping-a-hotel;;2",
         "after": [
           {
             "result": {
-              "duration": 978445293,
+              "duration": 496729729,
               "status": "passed"
             },
             "match": {
@@ -36,14 +36,14 @@
           }
         ],
         "type": "scenario",
-        "keyword": "Scenario",
+        "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 41773239397,
+              "duration": 28969758521,
               "status": "passed"
             },
-            "line": 7,
+            "line": 8,
             "name": "The User is in Delta homepage",
             "match": {
               "location": "HomePageSteps.the_User_is_in_Delta_homepage()"
@@ -52,68 +52,91 @@
           },
           {
             "result": {
-              "duration": 23948380481,
+              "duration": 40818575244,
               "status": "passed"
             },
-            "line": 8,
-            "name": "user navigate to search for a hotel",
+            "line": 9,
+            "name": "The user navigates to shop a hotel page",
             "match": {
-              "location": "HomePageSteps.user_navigate_to_search_for_a_hotel()"
+              "location": "BookAHotelSteps.the_user_navigates_to_shop_a_hotel_page()"
             },
             "keyword": "And "
           },
           {
             "result": {
-              "duration": 1123159553,
+              "duration": 1385598489,
               "status": "passed"
             },
-            "line": 9,
-            "name": "user click submit button without entering informations",
+            "line": 10,
+            "name": "The user enters the values to the fields \"Delhi\", \"02/21/2019\", \"02/22/2019\", \"1\" and \"1\"",
             "match": {
-              "location": "SearchHotelActionSteps.user_click_submit_button_without_entering_informations()"
+              "arguments": [
+                {
+                  "val": "Delhi",
+                  "offset": 42
+                },
+                {
+                  "val": "02/21/2019",
+                  "offset": 51
+                },
+                {
+                  "val": "02/22/2019",
+                  "offset": 65
+                },
+                {
+                  "val": "1",
+                  "offset": 79
+                },
+                {
+                  "val": "1",
+                  "offset": 87
+                }
+              ],
+              "location": "BookAHotelSteps.the_user_enters_the_values_to_the_fields_and(String,String,String,String,String)"
             },
+            "matchedColumns": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 458009050,
+              "duration": 252266353,
               "status": "passed"
             },
-            "line": 10,
-            "name": "user should see tbe error message",
+            "line": 11,
+            "name": "The user clicks the book a hotel and earn miles",
             "match": {
-              "location": "SearchHotelActionSteps.user_should_see_tbe_error_message(DataTable)"
+              "location": "BookAHotelSteps.the_user_clicks_the_book_a_hotel_and_earn_miles()"
             },
-            "rows": [
-              {
-                "cells": [
-                  "*WHERE ARE YOU GOING?",
-                  "*CHECK-IN",
-                  "*CHECK-OUT"
-                ],
-                "line": 11
-              }
-            ],
             "keyword": "Then "
           }
         ],
         "tags": [
           {
-            "line": 5,
-            "name": "@error"
+            "line": 2,
+            "name": "@smoke"
+          },
+          {
+            "line": 6,
+            "name": "@USHotel12"
           }
         ]
       }
     ],
-    "name": "To test search a hotel functionality",
-    "description": "",
-    "id": "to-test-search-a-hotel-functionality",
+    "name": "Shoping a Hotel",
+    "description": "I want to use this template for my feature file",
+    "id": "shoping-a-hotel",
     "keyword": "Feature",
-    "uri": "src/test/resources/feature/SearchForHotel/SearchForHotel.feature",
+    "uri": "src/test/resources/feature/BookAHotel/BookAHotel.feature",
     "tags": [
       {
         "line": 2,
-        "name": "@hotels"
+        "name": "@smoke"
       }
     ]
   }
