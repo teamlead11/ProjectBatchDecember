@@ -322,13 +322,13 @@ public class FunctionalLibrary {
 	/**
 	 * Method to select the option from drop down by visible text
 	 */
-	public static void selectByText(WebElement element, String i) {
+	public static void selectByText(WebElement element, String Text) {
 		try {
 			Select obj_select = new Select(element);
-			obj_select.selectByVisibleText(i);
-			Reporter.addStepLogPass(i + "selected from dropdown " + element.toString());
+			obj_select.selectByVisibleText(Text);
+			Reporter.addStepLogPass(Text + "selected from dropdown " + element.toString());
 		} catch (Exception e) {
-			Reporter.addStepLogInfo("failed to select" + i + "from " + element.toString());
+			Reporter.addStepLogInfo("failed to select" + Text + "from " + element.toString());
 		}
 	}
 

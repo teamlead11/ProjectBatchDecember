@@ -2,8 +2,6 @@ package com.ObjectRepository;
 
 import java.util.List;
 
-import javax.xml.xpath.XPath;
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -23,16 +21,14 @@ public class FlightSearchResultsPage {
 	@FindBy(xpath = "//input[@id='input_destination_1']")
 	private WebElement txt_destinationText;
 
-	@FindBy(xpath = "(//span[@class='dl-modal-component-calling-element']//a[@class='tblHeadBigtext fliReslnkfltNum wrapWords'])[1]")
+	@FindBy(xpath = "(//span[@class='dl-modal-component-calling-element']//a[@class='tblHeadBigtext fliReslnkfltNum wrapWords'])[i]")
 	private List<WebElement> lnk_FlightNum;
 	
-	@FindBy(xpath ="//div[text()='Atlanta, GA to Minneapolis/St Paul, MN']")
-	private WebElement flightsearchresult ;
-
-
+	@FindBy(xpath = "//div[text()='Atlanta, GA to Minneapolis/St Paul, MN']")
+	private WebElement Flightsearchresult ;
 
 	public WebElement getFlightsearchresult() {
-		return flightsearchresult;
+		return Flightsearchresult;
 	}
 
 	public List<WebElement> getLnk_FlightNum() {
