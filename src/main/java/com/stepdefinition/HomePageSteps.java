@@ -200,5 +200,11 @@ public class HomePageSteps extends FunctionalLibrary {
 		click(home.getMenu_More());
 		click(home.getMenu_ShopHotel());
 	}
+
+	@Given("^The user navigates to aircraft section under travel info$")
+	public void the_user_navigates_to_aircraft_section_under_travel_info() throws Throwable {
+		HomePage home = new HomePage();
+		click(home.getLnk_travelInfo());
+		click(home.getLnk_aircraft());
+	}
 }
-	

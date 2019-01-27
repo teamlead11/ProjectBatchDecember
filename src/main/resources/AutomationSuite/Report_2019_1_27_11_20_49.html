@@ -32,7 +32,6 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
-			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -46,7 +45,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Dec 28, 2018 07:42:30 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jan 27, 2019 11:20:49 AM</span>
 				</a>
 			</li>
 			<li>
@@ -72,7 +71,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -85,8 +84,8 @@
 					<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@hotels</a></li>
-					<li><a href='#'>@error</a></li>
+					<li><a href='#'>@tag</a></li>
+					<li><a href='#'>@tag1</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -134,10 +133,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>4</span> others
 				</div>
 			</div>
 		</div>
@@ -149,10 +148,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='70%'><span class='strong'>7</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='20%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='10%'>1</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>5</span> others
 				</div>
 			</div>
 		</div>
@@ -167,39 +166,39 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active has-leaf skip' status='skip' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>To test search a hotel functionality</span>
-						<span class='test-time'>Dec 28, 2018 07:42:30 AM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>To verify the list of aircrafts under aircraft module</span>
+						<span class='test-time'>Jan 27, 2019 11:20:49 AM</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Dec 28, 2018 07:42:30 AM</span>
-	<span class='label end-time'>Dec 28, 2018 07:43:46 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 16s+321ms</span>
+	<span class='label start-time'>Jan 27, 2019 11:20:49 AM</span>
+	<span class='label end-time'>Jan 27, 2019 11:20:49 AM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+85ms</span>
 </div>
 	<div class='test-attributes'>
 			<div class='category-list'>
-				<span class='category label white-text'>@hotels</span>
+				<span class='category label white-text'>@tag</span>
 			</div>
 	</div>
 	<ul class='collapsible node-list' data-collapsible='accordion'>
 		
-				<li class='node level-1  fail' status='fail' test-id='2'>
+				<li class='node level-1  skip' status='skip' test-id='2'>
 					<div class='collapsible-header'>
-						<div class='node-name'>Scenario: To test the error message when the user clicks book a hotel and earn miles with empty fields</div>						
-						<span class='node-time'>Dec 28, 2018 07:42:30 AM</span>
-						<span class='node-duration'>0h 1m 16s+294ms</span>
-						<span class='test-status right fail'>fail</span>
+						<div class='node-name'>Scenario: To verify the list of boeing aircrafts</div>						
+						<span class='node-time'>Jan 27, 2019 11:20:49 AM</span>
+						<span class='node-duration'>0h 0m 0s+69ms</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 						<ul class='collapsible node-list' data-collapsible='accordion'>
-				<li class='node level-2 leaf pass' status='pass' test-id='3'>
+				<li class='node level-2 leaf skip' status='skip' test-id='3'>
 					<div class='collapsible-header'>
 						<div class='node-name'>Given The User is in Delta homepage</div>						
-						<span class='node-time'>Dec 28, 2018 07:42:37 AM</span>
-						<span class='node-duration'>0h 0m 41s+636ms</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='node-time'>Jan 27, 2019 11:20:49 AM</span>
+						<span class='node-duration'>0h 0m 0s+38ms</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 						<div class='collapsible-body'>
 								<div class='node-steps'>
@@ -212,22 +211,22 @@
 											</tr>
 										</thead>
 										<tbody>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>7:43:19 AM</td>
-													<td class='step-details'>passed</td>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>11:20:49 AM</td>
+													<td class='step-details'>skipped</td>
 												</tr>
 										</tbody>
 									</table>
 								</div>
 						</div>
 				</li>
-				<li class='node level-2 leaf pass' status='pass' test-id='4'>
+				<li class='node level-2 leaf skip' status='skip' test-id='4'>
 					<div class='collapsible-header'>
-						<div class='node-name'>And user navigate to search for a hotel</div>						
-						<span class='node-time'>Dec 28, 2018 07:43:19 AM</span>
-						<span class='node-duration'>0h 0m 23s+580ms</span>
-						<span class='test-status right pass'>pass</span>
+						<div class='node-name'>And The user navigates to aircraft section under travel info</div>						
+						<span class='node-time'>Jan 27, 2019 11:20:49 AM</span>
+						<span class='node-duration'>0h 0m 0s+0ms</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 						<div class='collapsible-body'>
 								<div class='node-steps'>
@@ -240,32 +239,22 @@
 											</tr>
 										</thead>
 										<tbody>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>7:43:20 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (641a6755b3d8956c6b78a2b60cdb3e86)] -> xpath: (//a[contains(@class,'static-link-more')])[1]]element is clicked successfully</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>7:43:42 AM</td>
-													<td class='step-details'>Proxy element for: DefaultElementLocator 'By.xpath: //a[text()='Shop Hotels']'element is clicked successfully</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>7:43:42 AM</td>
-													<td class='step-details'>passed</td>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>11:20:49 AM</td>
+													<td class='step-details'>undefined</td>
 												</tr>
 										</tbody>
 									</table>
 								</div>
 						</div>
 				</li>
-				<li class='node level-2 leaf pass' status='pass' test-id='5'>
+				<li class='node level-2 leaf skip' status='skip' test-id='5'>
 					<div class='collapsible-header'>
-						<div class='node-name'>When user click submit button without entering informations</div>						
-						<span class='node-time'>Dec 28, 2018 07:43:42 AM</span>
-						<span class='node-duration'>0h 0m 1s+314ms</span>
-						<span class='test-status right pass'>pass</span>
+						<div class='node-name'>When The user selects the boeing under our aircraft section</div>						
+						<span class='node-time'>Jan 27, 2019 11:20:49 AM</span>
+						<span class='node-duration'>0h 0m 0s+1ms</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 						<div class='collapsible-body'>
 								<div class='node-steps'>
@@ -278,27 +267,22 @@
 											</tr>
 										</thead>
 										<tbody>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>7:43:44 AM</td>
-													<td class='step-details'>[[ChromeDriver: chrome on XP (641a6755b3d8956c6b78a2b60cdb3e86)] -> xpath: //input[@id='btnSubmit']]element is clicked successfully</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>7:43:44 AM</td>
-													<td class='step-details'>passed</td>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>11:20:49 AM</td>
+													<td class='step-details'>undefined</td>
 												</tr>
 										</tbody>
 									</table>
 								</div>
 						</div>
 				</li>
-				<li class='node level-2 leaf fail' status='fail' test-id='6'>
+				<li class='node level-2 leaf skip' status='skip' test-id='6'>
 					<div class='collapsible-header'>
-						<div class='node-name'>Then user should see tbe error message</div>						
-						<span class='node-time'>Dec 28, 2018 07:43:44 AM</span>
-						<span class='node-duration'>0h 0m 2s+720ms</span>
-						<span class='test-status right fail'>fail</span>
+						<div class='node-name'>Then The user should see the list of aircrafts</div>						
+						<span class='node-time'>Jan 27, 2019 11:20:49 AM</span>
+						<span class='node-duration'>0h 0m 0s+2ms</span>
+						<span class='test-status right skip'>skip</span>
 					</div>
 						<div class='collapsible-body'>
 								<div class='node-steps'>
@@ -313,28 +297,13 @@
 										<tbody>
 												<tr class='log' status='info'>
 													<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-													<td class='timestamp'>7:43:44 AM</td>
-													<td class='step-details'><table><tr><td>correct the 3 items indicated.</td></tr></table></td>
+													<td class='timestamp'>11:20:49 AM</td>
+													<td class='step-details'><table><tr><td>Boeing 717</td><td>Boeing 737-700</td><td>Boeing 737-800</td><td>Boeing 737-900 ER</td><td>Boeing 757-200</td><td>Boeing 757-300</td><td>Boeing 767-300</td><td>Boeing 767-300ER</td><td>Boeing 767-400ER</td><td>Boeing 777-200ER</td><td>Boeing 777-200LR</td></tr></table></td>
 												</tr>
-												<tr class='log' status='fail'>
-													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-													<td class='timestamp'>7:43:44 AM</td>
-													<td class='step-details'><textarea>org.junit.ComparisonFailure: expected:<[Where are you going]?> but was:<[*WHERE ARE YOU GOING]?>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at com.stepdefinition.SearchHotelActionSteps.user_should_see_tbe_error_message(SearchHotelActionSteps.java:29)
-	at ?.Then user should see tbe error message(src/test/resources/feature/SearchForHotel/SearchForHotel.feature:10)
-</textarea></td>
-												</tr>
-												<tr class='log' status='fail'>
-													<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-													<td class='timestamp'>7:43:44 AM</td>
-													<td class='step-details'>failed</td>
-												</tr>
-												<tr class='log' status='pass'>
-													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-													<td class='timestamp'>7:43:46 AM</td>
-													<td class='step-details'>Browser closed successfully</td>
+												<tr class='log' status='skip'>
+													<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+													<td class='timestamp'>11:20:49 AM</td>
+													<td class='step-details'>undefined</td>
 												</tr>
 										</tbody>
 									</table>
@@ -398,16 +367,16 @@
 				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@hotels</span>
+						<span class='category-name'>@tag</span>
 						<span class='category-status right'>
-							<span class='label fail'>1</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
 							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -421,9 +390,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Dec 28, 2018 07:42:30 AM</td>
-										<td class='linked' test-id='1'>To test search a hotel functionality</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Jan 27, 2019 11:20:49 AM</td>
+										<td class='linked' test-id='1'>To verify the list of aircrafts under aircraft module</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -432,16 +401,16 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@error</span>
+						<span class='category-name'>@tag1</span>
 						<span class='category-status right'>
-							<span class='label fail'>1</span>
+							<span class='label others'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
 							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
 						</div>
 					
 						<div class='category-tests'>
@@ -455,9 +424,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Dec 28, 2018 07:42:30 AM</td>
-										<td class='linked' test-id='2'>To test search a hotel functionality.Scenario: To test the error message when the user clicks book a hotel and earn miles with empty fields</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td>Jan 27, 2019 11:20:49 AM</td>
+										<td class='linked' test-id='2'>To verify the list of aircrafts under aircraft module.Scenario: To verify the list of boeing aircrafts</td>
+										<td><span class='test-status skip'>skip</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -476,72 +445,6 @@
 	</div>
 </div>
 <!-- category view -->
-<div id='exception-view' class='view hide'>
-
-    <section id='controls'>
-        <div class='controls grey lighten-4'>
-            <!-- search -->
-            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
-                <a href="#" class='search-div'>
-                    <i class='material-icons'>search</i> Search
-                </a>
-
-                <div class='input-field left hide'>
-                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-                </div>
-
-            </div>
-            <!-- search -->
-        </div>
-    </section>
-
-    <div class='subview-left left'>
-
-        <div class='view-summary'>
-            <h5>Exceptions</h3>
-                <ul id='exception-collection' class='exception-collection'>
-
-                        <li class='exception displayed active'>
-                            <div class='exception-heading'>
-                                <span class='exception-name'>org.junit.ComparisonFailure</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-                            </div>
-                            <div class='exception-content hide'>
-                                <div class='exception-tests'>
-                                    <table class='bordered table-results'>
-                                        <thead>
-                                        <tr>
-                                            <th>Timestamp</th>
-                                            <th>TestName</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                                    <tr>
-                                                        <td>Dec 28, 2018 07:43:44 AM</td>
-                                                        <td class='linked' test-id='6'>To test search a hotel functionality.Scenario: To test the error message when the user clicks book a hotel and earn miles with empty fields.Then user should see tbe error message</td>
-                                                        <td><pre><textarea>org.junit.ComparisonFailure: expected:<[Where are you going]?> but was:<[*WHERE ARE YOU GOING]?>
-	at org.junit.Assert.assertEquals(Assert.java:115)
-	at org.junit.Assert.assertEquals(Assert.java:144)
-	at com.stepdefinition.SearchHotelActionSteps.user_should_see_tbe_error_message(SearchHotelActionSteps.java:29)
-	at ?.Then user should see tbe error message(src/test/resources/feature/SearchForHotel/SearchForHotel.feature:10)
-</textarea></pre></td>
-                                                    </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </li>
-                </ul>
-        </div>
-    </div>
-
-    <div class='subview-right left'>
-        <div class='view-summary'>
-            <h5 class='exception-name'></h5>
-        </div>
-    </div>
-</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -557,25 +460,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>10</div>
+					<div class='panel-lead'>5</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Dec 28, 2018 07:42:30 AM</div>
+					<div class='panel-lead'>Jan 27, 2019 11:20:49 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Dec 28, 2018 07:43:46 AM</div>
+			 		<div class='panel-lead'>Jan 27, 2019 11:20:49 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>76,535ms</div>
+					<div class='panel-lead'>147ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -590,16 +493,16 @@
 							<th>Others</th>
 						</tr>
 						<tr>
-							<td>@hotels</td>
+							<td>@tag</td>
+							<td>0</td>
 							<td>0</td>
 							<td>1</td>
-							<td>0</td>
 						</tr>
 						<tr>
-							<td>@error</td>
+							<td>@tag1</td>
+							<td>0</td>
 							<td>0</td>
 							<td>1</td>
-							<td>0</td>
 						</tr>
 					</table>
 				</div>
@@ -614,22 +517,22 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 3,
-				failParent: 1,
+				passParent: 0,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 1,
+				skipParent: 4,
+				exceptionsParent: 4,
 				
-				passChild: 7,
-				failChild: 2,
+				passChild: 0,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 0,
+				skipChild: 4,
 				infoChild: 1,
-				exceptionsChild: 2,
+				exceptionsChild: 4,
 				
 				passGrandChild: 0,
 				failGrandChild: 0,

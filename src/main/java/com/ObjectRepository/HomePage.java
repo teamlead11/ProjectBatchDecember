@@ -22,10 +22,6 @@ public class HomePage {
 	@FindBy(id = "fromAirportName")
 	private WebElement lnk_SourceName;
 
-	public WebElement getSelect_Date_Done() {
-		return Select_Date_Done;
-	}
-
 	@FindBy(id = "search_input")
 	private WebElement txt_SearchInputName;
 
@@ -62,6 +58,12 @@ public class HomePage {
 	@FindBy(xpath = "//a[contains(@id,'primary-static-link-')]")
 	private List<WebElement> morePrimaryMenu;
 
+	@FindBy(xpath = "(//a[text()='Travel Info '])[1]")
+	private WebElement lnk_travelInfo;
+
+	@FindBy(id = "secondary-static-link-9")
+	private WebElement lnk_aircraft;
+
 	@FindBy(id = "flightNo")
 	private WebElement txt_flightNumber;
 
@@ -85,10 +87,10 @@ public class HomePage {
 
 	@FindBy(xpath = "//a[text()='Rent a Car']")
 	private WebElement menu_RentACar;
-	
-	@FindBy(xpath="//a[text()='Shop Hotels']")
+
+	@FindBy(xpath = "//a[text()='Shop Hotels']")
 	private WebElement menu_ShopHotel;
-	
+
 	public WebElement getMenu_ShopHotel() {
 		return menu_ShopHotel;
 	}
@@ -96,7 +98,7 @@ public class HomePage {
 	public WebElement getMenu_More() {
 		return menu_More;
 	}
-	
+
 	public WebElement getDropDown_TriptypeSelect() {
 		return DropDown_TriptypeSelect;
 	}
@@ -175,6 +177,18 @@ public class HomePage {
 
 	public WebElement getCal_departDate() {
 		return cal_departDate;
+	}
+
+	public WebElement getSelect_Date_Done() {
+		return Select_Date_Done;
+	}
+
+	public WebElement getLnk_travelInfo() {
+		return lnk_travelInfo;
+	}
+
+	public WebElement getLnk_aircraft() {
+		return lnk_aircraft;
 	}
 
 	public void SelectDateFromWebCalendar(String date) {

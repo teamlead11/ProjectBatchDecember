@@ -50,15 +50,15 @@ public class FunctionalLibrary {
 
 		System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\lib\\chromedriver.exe");
 		if (BrowserName.equals("chrome")) {
-			 driver = new ChromeDriver();
+			driver = new ChromeDriver();
 		}
 
 		else if (BrowserName.equals("ie")) {
-			 driver = new InternetExplorerDriver();
+			driver = new InternetExplorerDriver();
 		}
 
 		else if (BrowserName.equals("firefox")) {
-				driver = new FirefoxDriver();
+			driver = new FirefoxDriver();
 		}
 
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -258,13 +258,13 @@ public class FunctionalLibrary {
 	 * 
 	 * @param object
 	 */
-	public static void click(Object object) {
+	public static void click(WebElement ele) {
 		try {
-			((WebElement) object).click();
-			Reporter.addStepLogPass(object.toString() + "element is clicked successfully");
+			ele.click();
+			Reporter.addStepLogPass(ele.toString() + "element is clicked successfully");
 
 		} catch (Exception e) {
-			Reporter.addStepLogInfo(object.toString() + "element is not clicked" + e.getMessage());
+			Reporter.addStepLogInfo(ele.toString() + "element is not clicked" + e.getMessage());
 		}
 	}
 
@@ -368,8 +368,7 @@ public class FunctionalLibrary {
 	}
 
 	/**
-	 * To create a connectivity to Database and update the scenario execution
-	 * status
+	 * To create a connectivity to Database and update the scenario execution status
 	 */
 	public static void createDBConnection(String scName, String scStatus) {
 		try {
@@ -512,8 +511,7 @@ public class FunctionalLibrary {
 	/**
 	 * To get checkbox is selected or not from list of checkboxes
 	 * 
-	 * @param List
-	 *            <WebElement>
+	 * @param List <WebElement>
 	 * @return
 	 */
 	public static boolean isCheckBoxSelectedInDropdown(List<WebElement> elements) {
@@ -637,8 +635,7 @@ public class FunctionalLibrary {
 	/**
 	 * verify Option is available In DropDown
 	 * 
-	 * @param Dropdown
-	 *            and option
+	 * @param Dropdown and option
 	 * @author Ganesh Bharathy
 	 * @return boolean
 	 */
@@ -788,8 +785,7 @@ public class FunctionalLibrary {
 	/**
 	 * enter integer number using keypress
 	 * 
-	 * @param String
-	 *            number
+	 * @param String number
 	 * @author Ganesh Bharathy
 	 * @return
 	 * @throws InterruptedException
@@ -827,8 +823,7 @@ public class FunctionalLibrary {
 	/**
 	 * click on specific co-ordinates for a Webelement
 	 * 
-	 * @param String
-	 *            number
+	 * @param String number
 	 * @author Ganesh Bharathy
 	 * @return
 	 * @throws InterruptedException
@@ -892,7 +887,5 @@ public class FunctionalLibrary {
 		}
 		return flag;
 	}
-
-	
 
 }
